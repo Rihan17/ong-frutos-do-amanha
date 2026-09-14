@@ -1,0 +1,189 @@
+/* ONG Frutos do Amanhã — landing page
+   Ordem: tokens · base · layout · header · hero · missão · projetos
+          · doação · notícias · rodapé · breakpoints */
+
+/* ---------- tokens ---------- */
+:root{
+  --verde-copa:#1F3D2B;
+  --verde-broto:#EEF3E2;
+  --verde-broto-2:#e3ebd3;
+  --amarelo-manga:#F0A93B;
+  --vermelho-acerola:#D8492E;
+  --vermelho-acerola-hover:#c23c22;
+  --azul-mare:#1F5D6B;
+  --grafite-terra:#262820;
+  --grafite-60:#4a4d40;
+  --claro-80:rgba(238,243,226,.85);
+  --font-titulo:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-corpo:"Public Sans",system-ui,-apple-system,sans-serif;
+  --gutter:clamp(16px,4vw,40px);
+  --max:1160px;
+  --radius:16px;
+}
+
+/* ---------- base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--verde-broto);color:var(--grafite-terra);
+  font-family:var(--font-corpo);font-weight:400;font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:var(--font-titulo);font-weight:600;line-height:1.15;margin:0 0 12px;text-wrap:pretty}
+h1{font-size:clamp(34px,5.4vw,60px);line-height:1.05;max-width:20ch;margin-bottom:22px}
+h2{font-size:clamp(27px,3.2vw,38px);max-width:24ch}
+h3{font-size:21px}
+p{margin:0 0 14px;max-width:72ch;text-wrap:pretty}
+p:last-child{margin-bottom:0}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--azul-mare);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:#123c46}
+:focus-visible{outline:3px solid var(--amarelo-manga);outline-offset:3px}
+.muted{color:var(--grafite-60);font-size:15.5px}
+.skip-link{position:absolute;left:-9999px}
+.skip-link:focus{left:12px;top:12px;z-index:99;background:#fff;color:var(--verde-copa);padding:10px 16px;border-radius:8px}
+
+/* ---------- layout ---------- */
+.container{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
+.section{padding-block:clamp(48px,7vw,88px);scroll-margin-top:84px}
+.section-tint{background:var(--verde-broto-2)}
+.section-dark{background:var(--verde-copa);color:var(--verde-broto)}
+.section-dark h2,.section-dark h3{color:var(--verde-broto)}
+.section-dark .body-text{color:var(--claro-80)}
+.section-lead{font-size:17px;color:var(--grafite-60);max-width:70ch;margin-bottom:clamp(28px,4vw,44px)}
+.body-text{font-size:17px;color:#3a3d31;margin-bottom:16px}
+.two-col{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,56px)}
+.btn-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.eyebrow{font-size:13.5px;font-weight:600;letter-spacing:.05em;margin-bottom:14px}
+.eyebrow-amber{color:var(--amarelo-manga)}
+.eyebrow-blue{color:var(--azul-mare)}
+
+/* ---------- botões ---------- */
+.btn{display:inline-block;border:none;border-radius:999px;font-family:var(--font-corpo);
+  font-size:16.5px;font-weight:600;padding:15px 30px;text-decoration:none;cursor:pointer}
+.btn-doar{background:var(--vermelho-acerola);color:#fff}
+.btn-doar:hover{background:var(--vermelho-acerola-hover);color:#fff}
+.btn-ghost{border:1.5px solid rgba(238,243,226,.55);color:var(--verde-broto);background:transparent}
+.btn-ghost:hover{border-color:var(--amarelo-manga);color:var(--amarelo-manga)}
+.btn-block{display:block;width:100%;padding-inline:24px}
+
+/* ---------- header ---------- */
+.site-header{position:sticky;top:0;z-index:50;background:var(--verde-copa);color:var(--verde-broto);
+  border-bottom:1px solid rgba(240,169,59,.35)}
+.header-inner{display:flex;flex-wrap:wrap;align-items:center;gap:14px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:11px;color:var(--verde-broto);text-decoration:none}
+.brand-mark{width:34px;height:34px;border-radius:50%;background:url('../img/logo.jpg') center/cover no-repeat;flex:none}
+.brand-text{display:flex;flex-direction:column;line-height:1.1}
+.brand-text strong{font-family:var(--font-titulo);font-weight:600;font-size:18px;color:var(--amarelo-manga)}
+.brand-text small{font-size:11.5px;color:rgba(238,243,226,.7)}
+.brand-footer strong{font-family:var(--font-titulo);font-size:18px}
+.brand-footer{margin-bottom:14px}
+.nav{display:none;flex-direction:column;gap:4px;width:100%}
+.nav.is-open{display:flex}
+.nav a{color:var(--verde-broto);text-decoration:none;font-size:16px;font-weight:500;padding:10px 0}
+.nav a:hover{color:var(--amarelo-manga)}
+.nav .btn-doar{margin-top:8px;text-align:center}
+.nav .btn-doar:hover{color:#fff}
+.nav-toggle{margin-left:auto;background:transparent;color:var(--verde-broto);
+  border:1.5px solid rgba(238,243,226,.5);border-radius:999px;
+  font-family:var(--font-corpo);font-size:15px;font-weight:600;padding:9px 18px;cursor:pointer}
+
+/* ---------- hero ---------- */
+.hero{background:var(--verde-copa);color:var(--verde-broto);
+  padding-top:clamp(36px,6vw,76px);padding-bottom:clamp(48px,7vw,86px)}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,56px);align-items:center}
+.hero-lead{font-size:clamp(16.5px,1.6vw,19px);color:rgba(238,243,226,.9);max-width:60ch}
+.slogan{font-family:var(--font-titulo);font-weight:500;font-size:20px;color:var(--amarelo-manga);margin-top:14px}
+.hero-photo{position:relative;margin:0;padding:0 0 16px 16px}
+.hero-photo-frame{position:absolute;left:0;bottom:0;width:72%;height:78%;
+  border:2px solid var(--amarelo-manga);border-radius:14px}
+.photo{position:relative;border-radius:14px;overflow:hidden;background:var(--verde-broto-2)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo-4x3{aspect-ratio:4/3;background:#16291d}
+.photo-3x2{aspect-ratio:3/2}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px 32px;
+  margin-top:clamp(36px,5vw,60px);padding-top:28px;border-top:1px solid rgba(238,243,226,.2)}
+.stat-num{display:block;font-family:var(--font-titulo);font-weight:600;font-size:34px;color:var(--amarelo-manga)}
+.stat-label{display:block;font-size:14.5px;color:var(--claro-80);margin-top:4px}
+
+/* ---------- pilares ---------- */
+.pillars{list-style:none;margin:0;padding:0}
+.pillars li{display:flex;gap:16px;padding:16px 0;border-top:1px solid rgba(38,40,32,.14)}
+.pillars li:last-child{border-bottom:1px solid rgba(38,40,32,.14)}
+.pillars h3{font-size:19px;margin-bottom:4px}
+.pillars p{font-size:15.5px;line-height:1.55;color:var(--grafite-60);max-width:52ch;margin:0}
+.pillar-num{font-family:var(--font-titulo);font-weight:600;font-size:15px;color:var(--amarelo-manga);flex:none;width:26px}
+
+/* ---------- projetos ---------- */
+.cards{display:grid;grid-template-columns:1fr;gap:clamp(24px,3vw,36px)}
+.card{background:#fff;border:1px solid rgba(31,61,43,.16);border-radius:var(--radius);overflow:hidden}
+.card .photo{border-radius:0}
+.card-body{padding:26px 26px 28px}
+.card-body h3{font-size:23px;margin-bottom:10px}
+.card-body p{font-size:16px;color:#3a3d31;max-width:60ch}
+
+/* ---------- doação ---------- */
+.pix{background:var(--verde-broto);color:var(--grafite-terra);border-radius:var(--radius);
+  padding:26px 24px;max-width:460px;margin-top:28px}
+.pix .eyebrow{margin-bottom:6px}
+.pix-key{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:clamp(15px,2.4vw,18px);
+  word-break:break-all;margin-bottom:18px}
+.pix-note{font-size:13.5px;line-height:1.5;color:var(--grafite-60);margin-top:14px}
+.pix-note:empty{display:none}
+.items{list-style:none;margin:0 0 30px;padding:0;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px 20px}
+.items li{font-size:16px;line-height:1.4;padding-left:16px;border-left:2px solid var(--amarelo-manga)}
+.coleta{border:1px solid rgba(238,243,226,.28);border-radius:var(--radius);padding:24px}
+.coleta h3{font-size:20px;color:var(--amarelo-manga);margin-bottom:10px}
+.coleta p{font-size:16px;color:rgba(238,243,226,.92);margin-bottom:8px}
+.coleta .muted{color:rgba(238,243,226,.75)}
+
+/* ---------- notícias ---------- */
+.news{display:flex;flex-direction:column;margin-top:clamp(26px,4vw,40px)}
+.news-item{display:grid;grid-template-columns:1fr;gap:8px 40px;padding:24px 0;
+  border-top:1px solid rgba(38,40,32,.16)}
+.news-item:last-child{border-bottom:1px solid rgba(38,40,32,.16)}
+.news-date{font-size:14px;font-weight:600;color:var(--azul-mare);margin:0}
+.news-kind{font-size:13.5px;color:#6b6e60;margin:4px 0 0}
+.news-item h3{margin-bottom:8px}
+.news-item p{font-size:16px;color:#3a3d31;max-width:70ch}
+
+/* ---------- rodapé ---------- */
+.site-footer{background:var(--verde-copa);color:var(--verde-broto);
+  padding-top:clamp(44px,6vw,72px);padding-bottom:28px;scroll-margin-top:84px}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,48px)}
+.footer-grid h3{font-family:var(--font-corpo);font-size:13.5px;font-weight:600;
+  letter-spacing:.05em;color:var(--amarelo-manga);margin-bottom:12px}
+.footer-grid p{font-size:15.5px;color:rgba(238,243,226,.9);max-width:36ch}
+.footer-grid .muted{color:rgba(238,243,226,.8)}
+.footer-grid a{color:var(--verde-broto)}
+.social,.footer-nav{display:flex;flex-direction:column;gap:9px}
+.social a,.footer-nav a{display:flex;align-items:center;gap:10px;font-size:15.5px;text-decoration:none}
+.social a:hover,.footer-nav a:hover{color:var(--amarelo-manga)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--amarelo-manga);flex:none}
+.link-amber{color:var(--amarelo-manga);font-weight:600}
+.footer-bottom{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;
+  margin-top:clamp(32px,4vw,48px);padding-top:20px;border-top:1px solid rgba(238,243,226,.2)}
+.footer-bottom p{font-size:13.5px;color:rgba(238,243,226,.6);margin:0}
+
+/* ---------- tablet ---------- */
+@media (min-width:700px){
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .news-item{grid-template-columns:220px minmax(0,1fr)}
+  .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* ---------- desktop ---------- */
+@media (min-width:960px){
+  .nav-toggle{display:none}
+  .nav{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;
+    width:auto;margin-left:auto;gap:8px 22px}
+  .nav a{font-size:15px;padding:6px 0;border-bottom:2px solid transparent}
+  .nav a:hover{color:var(--verde-broto);border-bottom-color:var(--amarelo-manga)}
+  .nav .btn-doar{margin-top:0;font-size:15px;padding:10px 20px;border-bottom:none}
+  .two-col,.hero-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .news-item{grid-template-columns:260px minmax(0,1fr)}
+}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
