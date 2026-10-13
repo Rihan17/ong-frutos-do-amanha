@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Administradores — Painel ONG Frutos do Amanhã</title>
+<meta name="description" content="Painel administrativo da ONG Frutos do Amanhã.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="admin">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="admin-topo">
+  <div class="admin-topo-inner">
+    <a class="brand" href="admin.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <strong>Frutos do Amanhã</strong>
+        <small>Painel administrativo</small>
+      </span>
+    </a>
+    <button class="nav-toggle admin-toggle" type="button" aria-expanded="false" aria-controls="admin-menu">Menu</button>
+    <div class="admin-usuario">
+      <span class="admin-nome">Heloisa Morais</span>
+      <a class="admin-sair" href="index.html">Sair</a>
+    </div>
+  </div>
+</header>
+
+<div class="admin-layout">
+
+  <nav class="admin-menu" id="admin-menu" aria-label="Menu do painel">
+    <a class="admin-item" href="admin.html">Visão geral</a>
+
+    <p class="admin-grupo" id="g-pessoas">Pessoas</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-pessoas">
+      <a class="admin-item" href="admin-doadores.html">Doadores</a>
+      <a class="admin-item" href="admin-voluntarios.html">Voluntários</a>
+      <a class="admin-item" href="admin-solicitacoes.html">Solicitações <span class="badge">3</span></a>
+      <a class="admin-item" href="admin-criancas.html">Crianças</a>
+      <a class="admin-item" href="admin-responsaveis.html">Responsáveis</a>
+    </div>
+
+    <p class="admin-grupo" id="g-financeiro">Financeiro</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-financeiro">
+      <a class="admin-item" href="admin-doacoes.html">Doações</a>
+    </div>
+
+    <p class="admin-grupo" id="g-conteudo">Conteúdo</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-conteudo">
+      <a class="admin-item" href="admin-projetos.html">Projetos</a>
+      <a class="admin-item" href="admin-noticias.html">Notícias</a>
+    </div>
+
+    <p class="admin-grupo" id="g-admin">Administração</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-admin">
+      <a class="admin-item" href="admin-usuarios.html" aria-current="page">Administradores</a>
+    </div>
+  </nav>
+
+  <main class="admin-conteudo" id="conteudo">
+
+    <div class="admin-cabecalho">
+      <div>
+        <h1>Administradores</h1>
+        <p class="admin-lead">Quem pode entrar no painel. Só administradores conseguem criar novos acessos.</p>
+      </div>
+      <button class="btn btn-doar" type="button" id="abrir-admin" aria-expanded="false" aria-controls="form-admin">
+        Novo administrador
+      </button>
+    </div>
+
+    <p class="nota-dev">Tela de demonstração: os acessos abaixo são de exemplo e virão do banco
+      quando o back-end estiver conectado.</p>
+
+    <div class="aviso aviso-restrito">
+      <h3>Cada pessoa com o próprio acesso</h3>
+      <p>Senha compartilhada impede saber quem fez cada alteração. Se alguém sair da equipe, o acesso dessa pessoa deve ser desativado no mesmo dia.</p>
+    </div>
+
+    <section class="form-card bloco-conta" id="form-admin" hidden>
+      <h2>Novo administrador</h2>
+      <p class="form-intro">A pessoa recebe um e-mail para criar a própria senha. Você não define a senha dela.</p>
+
+      <form id="form-novo-admin" novalidate>
+
+        <div class="campo">
+          <label for="a-nome">Nome completo <span class="obrig" aria-hidden="true">*</span></label>
+          <input type="text" id="a-nome" name="a-nome" required aria-describedby="erro-a-nome">
+          <p class="erro-campo" id="erro-a-nome" role="alert"></p>
+        </div>
+
+        <div class="campo-duplo">
+          <div class="campo">
+            <label for="a-email">E-mail <span class="obrig" aria-hidden="true">*</span></label>
+            <input type="email" id="a-email" name="a-email" required aria-describedby="ajuda-a-email erro-a-email">
+            <p class="ajuda" id="ajuda-a-email">É por aqui que o convite de acesso será enviado.</p>
+            <p class="erro-campo" id="erro-a-email" role="alert"></p>
+          </div>
+          <div class="campo">
+            <label for="a-cargo">Função na ONG <span class="obrig" aria-hidden="true">*</span></label>
+            <input type="text" id="a-cargo" name="a-cargo" placeholder="Ex: coordenação pedagógica"
+                   required aria-describedby="erro-a-cargo">
+            <p class="erro-campo" id="erro-a-cargo" role="alert"></p>
+          </div>
+        </div>
+
+        <fieldset class="grupo">
+          <legend>Nível de acesso <span class="obrig" aria-hidden="true">*</span></legend>
+          <div class="opcoes-linha">
+            <label class="opcao">
+              <input type="radio" name="a-nivel" value="completo" checked>
+              <span><strong>Acesso completo</strong><small>Tudo, inclusive criar outros administradores</small></span>
+            </label>
+            <label class="opcao">
+              <input type="radio" name="a-nivel" value="operacional">
+              <span><strong>Operacional</strong><small>Pessoas, doações e conteúdo, sem criar acessos</small></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="btn-row btn-row-form">
+          <button class="btn btn-doar" type="submit">Enviar convite</button>
+          <button class="btn btn-copa" type="button" id="cancelar-admin">Cancelar</button>
+        </div>
+        <p class="form-status" role="status" aria-live="polite" id="status-admin"></p>
+      </form>
+    </section>
+
+    <section class="admin-secao">
+      <h2>Acessos ativos</h2>
+
+      <div class="tabela-rolagem">
+        <table class="tabela" id="tabela-admins">
+          <caption class="muted">Pessoas com acesso ao painel.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Função</th>
+              <th scope="col">Acesso</th>
+              <th scope="col">Último login</th>
+              <th scope="col">Situação</th>
+              <th scope="col"><span class="oculto-visual">Ações</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Heloisa Morais <span class="selo selo-neutro">você</span></th>
+              <td>heloisa@frutosdoamanha.org.br</td>
+              <td>Fundadora</td>
+              <td>Completo</td>
+              <td>Hoje, 08h14</td>
+              <td><span class="selo selo-ok">Ativo</span></td>
+              <td><span class="muted">—</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Rihan Amorim</th>
+              <td>rihan@frutosdoamanha.org.br</td>
+              <td>Site e sistema</td>
+              <td>Completo</td>
+              <td>Ontem, 21h02</td>
+              <td><span class="selo selo-ok">Ativo</span></td>
+              <td><button class="btn-link desativar-admin" type="button">Desativar</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Sandra Lopes</th>
+              <td>sandra@frutosdoamanha.org.br</td>
+              <td>Coordenação pedagógica</td>
+              <td>Operacional</td>
+              <td>09/10/2026</td>
+              <td><span class="selo selo-ok">Ativo</span></td>
+              <td><button class="btn-link desativar-admin" type="button">Desativar</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Marcos Teixeira</th>
+              <td>marcos@frutosdoamanha.org.br</td>
+              <td>Captação e eventos</td>
+              <td>Operacional</td>
+              <td>Nunca entrou</td>
+              <td><span class="selo selo-pendente">Convite pendente</span></td>
+              <td><button class="btn-link reenviar-convite" type="button">Reenviar convite</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Patrícia Gomes</th>
+              <td>patricia@frutosdoamanha.org.br</td>
+              <td>Ex-coordenação</td>
+              <td>Operacional</td>
+              <td>14/06/2026</td>
+              <td><span class="selo selo-neutro">Desativado</span></td>
+              <td><span class="muted">—</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="form-status" role="status" aria-live="polite" id="status-lista-admin"></p>
+    </section>
+
+    <section class="admin-secao">
+      <h2>O que cada nível pode fazer</h2>
+      <div class="tabela-rolagem">
+        <table class="tabela">
+          <caption class="muted">Permissões por nível de acesso.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Ação</th>
+              <th scope="col">Completo</th>
+              <th scope="col">Operacional</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Ver doações e exportar relatórios</th><td>Sim</td><td>Sim</td></tr>
+            <tr><th scope="row">Registrar doação recebida por PIX</th><td>Sim</td><td>Sim</td></tr>
+            <tr><th scope="row">Analisar solicitações e candidaturas</th><td>Sim</td><td>Sim</td></tr>
+            <tr><th scope="row">Cadastrar crianças e responsáveis</th><td>Sim</td><td>Sim</td></tr>
+            <tr><th scope="row">Publicar projetos e notícias</th><td>Sim</td><td>Sim</td></tr>
+            <tr><th scope="row">Criar e desativar administradores</th><td>Sim</td><td>Não</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="admin-rodape">
+  <p>ONG Frutos do Amanhã · Painel administrativo</p>
+  <nav class="footer-legal" aria-label="Links do painel">
+    <a href="index.html">Ver o site público</a>
+    <a href="mapa-do-site.html">Mapa do site</a>
+  </nav>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/formularios.js"></script>
+</body>
+</html>

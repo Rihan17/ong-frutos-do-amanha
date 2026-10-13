@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minhas doações — ONG Frutos do Amanhã</title>
+<meta name="description" content="Histórico das suas doações para a ONG Frutos do Amanhã, com a situação de cada pagamento.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <strong>Frutos do Amanhã</strong>
+        <small>São Vicente · Praia Grande</small>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+    <nav class="nav" id="menu-principal" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="quem-somos.html">Quem somos</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="como-ajudar.html">Como ajudar</a>
+      <a href="noticias.html">Notícias</a>
+      <a href="contato.html">Contato</a>
+      <span class="nav-acoes">
+        <a class="btn btn-entrar" href="conta.html">Minha conta</a>
+        <a class="btn btn-doar" href="conta-doar.html">Doar agora</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <section class="page-head page-head-conta">
+    <div class="container">
+      <p class="eyebrow eyebrow-amber">Minhas doações</p>
+      <h1>Seu histórico</h1>
+      <p class="hero-lead">Todas as doações feitas pela plataforma, com a situação de cada pagamento.</p>
+    </div>
+  </section>
+
+  <div class="conta-layout container">
+
+    <nav class="conta-nav" aria-label="Menu da conta">
+      <a href="conta.html">Meu perfil</a>
+      <a href="conta-doar.html">Doar</a>
+      <a href="conta-doacoes.html" aria-current="page">Minhas doações</a>
+      <a href="conta-voluntariado.html">Voluntariado</a>
+      <a class="conta-sair" href="index.html">Sair</a>
+    </nav>
+
+    <div class="conta-conteudo">
+
+      <p class="nota-dev">Tela de demonstração: as doações abaixo são de exemplo e virão do
+        banco quando o back-end estiver conectado.</p>
+
+      <div class="numeros numeros-conta">
+        <div class="numero"><span class="stat-num">R$ 310</span><span class="numero-label">Total doado</span></div>
+        <div class="numero"><span class="stat-num">4</span><span class="numero-label">Doações concluídas</span></div>
+        <div class="numero"><span class="stat-num">1</span><span class="numero-label">Doação mensal ativa</span></div>
+      </div>
+
+      <section class="form-card bloco-conta">
+        <h2>Doação mensal</h2>
+        <dl class="resumo">
+          <div><dt>Valor</dt><dd>R$ 30,00 por mês</dd></div>
+          <div><dt>Próxima cobrança</dt><dd>5 de novembro de 2026</dd></div>
+          <div><dt>Situação</dt><dd><span class="selo selo-ok">Ativa</span></dd></div>
+        </dl>
+        <p class="ajuda">Ao cancelar, a cobrança deste mês não é estornada e nenhuma nova é feita.</p>
+        <button class="btn btn-risco" type="button" id="cancelar-assinatura">Cancelar doação mensal</button>
+        <p class="form-status" role="status" aria-live="polite" id="status-assinatura"></p>
+      </section>
+
+      <section class="bloco-conta">
+        <h2>Doações realizadas</h2>
+
+        <div class="filtros" role="group" aria-label="Filtrar por situação">
+          <label class="chip"><input type="radio" name="filtro" value="todas" checked><span>Todas</span></label>
+          <label class="chip"><input type="radio" name="filtro" value="pago"><span>Pagas</span></label>
+          <label class="chip"><input type="radio" name="filtro" value="aguardando"><span>Aguardando</span></label>
+          <label class="chip"><input type="radio" name="filtro" value="outras"><span>Canceladas</span></label>
+        </div>
+
+        <div class="tabela-rolagem">
+          <table class="tabela tabela-doacoes" id="tabela-doacoes">
+            <caption class="muted">Doações feitas pela plataforma, da mais recente para a mais antiga.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Data</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Destino</th>
+                <th scope="col">Situação</th>
+                <th scope="col"><span class="oculto-visual">Comprovante</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-situacao="pago">
+                <th scope="row">05/10/2026</th>
+                <td>R$ 30,00</td>
+                <td>Doação mensal</td>
+                <td><span class="selo selo-ok">Pago</span></td>
+                <td><button class="btn-link comprovante" type="button">Comprovante</button></td>
+              </tr>
+              <tr data-situacao="aguardando">
+                <th scope="row">28/09/2026</th>
+                <td>R$ 100,00</td>
+                <td>Estudando para o Amanhã</td>
+                <td><span class="selo selo-pendente">Aguardando pagamento</span></td>
+                <td><span class="muted">—</span></td>
+              </tr>
+              <tr data-situacao="pago">
+                <th scope="row">05/09/2026</th>
+                <td>R$ 30,00</td>
+                <td>Doação mensal</td>
+                <td><span class="selo selo-ok">Pago</span></td>
+                <td><button class="btn-link comprovante" type="button">Comprovante</button></td>
+              </tr>
+              <tr data-situacao="outras">
+                <th scope="row">22/08/2026</th>
+                <td>R$ 50,00</td>
+                <td>Onde for mais necessário</td>
+                <td><span class="selo selo-falha">Cancelada</span></td>
+                <td><span class="muted">—</span></td>
+              </tr>
+              <tr data-situacao="pago">
+                <th scope="row">14/07/2026</th>
+                <td>R$ 150,00</td>
+                <td>Feirinha da Criança</td>
+                <td><span class="selo selo-ok">Pago</span></td>
+                <td><button class="btn-link comprovante" type="button">Comprovante</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="vazio" id="lista-vazia" hidden>Nenhuma doação com essa situação.</p>
+        <p class="form-status" role="status" aria-live="polite" id="status-comprovante"></p>
+      </section>
+
+      <div class="aviso">
+        <h3>Doou por PIX direto?</h3>
+        <p>Doações feitas pela chave PIX não entram aqui automaticamente. Se precisar do registro, envie o comprovante para a ONG que a gente lança no sistema.</p>
+        <p class="link-mais"><a href="contato.html">Falar com a ONG</a></p>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand brand-footer">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <strong>Frutos do Amanhã</strong>
+      </div>
+      <p class="muted">Educação, Respeito e Disciplina. ONG fundada por Heloisa Morais em 2011.</p>
+    </div>
+    <div>
+      <h2 class="footer-title">Endereço</h2>
+      <p>Rua Geralda Martins de Oliveira, 355<br>Vila Matias · São Vicente – SP<br>CEP 11345-230</p>
+      <p><a href="tel:+551300000000">(13) 0000-0000</a></p>
+    </div>
+    <div>
+      <h2 class="footer-title">Redes sociais</h2>
+      <nav class="social" aria-label="Redes sociais">
+        <a href="https://instagram.com/ongfrutosdoamanha" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>Instagram @ongfrutosdoamanha</a>
+        <a href="https://www.facebook.com/OngFrutosDoAmanha" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>Projetos Sociais Ong Frutos do Amanhã</a>
+        <a href="https://wa.me/5513900000000" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>WhatsApp (13) 90000-0000</a>
+      </nav>
+    </div>
+    <div>
+      <h2 class="footer-title">Navegação</h2>
+      <nav class="footer-nav" aria-label="Menu secundário">
+        <a href="quem-somos.html">Quem somos</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="como-ajudar.html">Como ajudar</a>
+        <a href="noticias.html">Notícias</a>
+        <a href="transparencia.html">Transparência</a>
+        <a href="solicitar-vaga.html">Solicitar vaga</a>
+        <a class="link-amber" href="voluntariado.html">Seja voluntário</a>
+      </nav>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 ONG Frutos do Amanhã · São Vicente e Praia Grande</p>
+    <nav class="footer-legal" aria-label="Documentos legais">
+      <a href="mapa-do-site.html">Mapa do site</a>
+      <a href="privacidade.html">Política de privacidade</a>
+      <a href="termos.html">Termos de uso</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/formularios.js"></script>
+</body>
+</html>

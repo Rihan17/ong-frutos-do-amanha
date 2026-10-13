@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solicitar vaga — ONG Frutos do Amanhã</title>
+<meta name="description" content="Formulário para famílias solicitarem uma vaga nas atividades da ONG Frutos do Amanhã, em São Vicente.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <strong>Frutos do Amanhã</strong>
+        <small>São Vicente · Praia Grande</small>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+    <nav class="nav" id="menu-principal" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="quem-somos.html">Quem somos</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="como-ajudar.html">Como ajudar</a>
+      <a href="noticias.html">Notícias</a>
+      <a href="contato.html">Contato</a>
+      <span class="nav-acoes">
+        <a class="btn btn-entrar" href="login.html">Entrar</a>
+        <a class="btn btn-doar" href="como-ajudar.html">Doar agora</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <section class="page-head">
+    <div class="container">
+      <p class="eyebrow eyebrow-amber">Solicitar vaga</p>
+      <h1>Inscreva sua criança nas atividades</h1>
+      <p class="hero-lead">Preencha o pedido e a ONG entra em contato. O formulário deve ser preenchido pelo pai, pela mãe ou pelo responsável legal.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col two-col-wide">
+
+      <div class="form-card">
+        <h2>Dados do pedido</h2>
+        <p class="form-intro">Campos marcados com <span class="obrig" aria-hidden="true">*</span> são obrigatórios.</p>
+
+        <form id="form-solicitacao" novalidate>
+
+          <h3 class="sub-titulo sub-titulo-primeiro">Sobre o responsável</h3>
+
+          <div class="campo">
+            <label for="resp-nome">Nome completo <span class="obrig" aria-hidden="true">*</span></label>
+            <input type="text" id="resp-nome" name="resp-nome" autocomplete="name" required
+                   aria-describedby="erro-resp-nome">
+            <p class="erro-campo" id="erro-resp-nome" role="alert"></p>
+          </div>
+
+          <div class="campo-duplo">
+            <div class="campo">
+              <label for="resp-cpf">CPF <span class="obrig" aria-hidden="true">*</span></label>
+              <input type="text" id="resp-cpf" name="resp-cpf" inputmode="numeric"
+                     placeholder="000.000.000-00" maxlength="14" required aria-describedby="erro-resp-cpf">
+              <p class="erro-campo" id="erro-resp-cpf" role="alert"></p>
+            </div>
+            <div class="campo">
+              <label for="resp-parentesco">Parentesco <span class="obrig" aria-hidden="true">*</span></label>
+              <select id="resp-parentesco" name="resp-parentesco" required aria-describedby="erro-resp-parentesco">
+                <option value="">Selecione</option>
+                <option>Mãe</option>
+                <option>Pai</option>
+                <option>Avó ou avô</option>
+                <option>Tia ou tio</option>
+                <option>Outro responsável legal</option>
+              </select>
+              <p class="erro-campo" id="erro-resp-parentesco" role="alert"></p>
+            </div>
+          </div>
+
+          <div class="campo-duplo">
+            <div class="campo">
+              <label for="resp-telefone">Telefone <span class="obrig" aria-hidden="true">*</span></label>
+              <input type="tel" id="resp-telefone" name="resp-telefone" inputmode="numeric"
+                     placeholder="(13) 90000-0000" maxlength="16" required aria-describedby="ajuda-resp-tel erro-resp-telefone">
+              <p class="ajuda" id="ajuda-resp-tel">É por aqui que vamos responder.</p>
+              <p class="erro-campo" id="erro-resp-telefone" role="alert"></p>
+            </div>
+            <div class="campo">
+              <label for="resp-email">E-mail (opcional)</label>
+              <input type="email" id="resp-email" name="resp-email" autocomplete="email"
+                     aria-describedby="erro-resp-email">
+              <p class="erro-campo" id="erro-resp-email" role="alert"></p>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="resp-bairro">Bairro e cidade <span class="obrig" aria-hidden="true">*</span></label>
+            <input type="text" id="resp-bairro" name="resp-bairro" placeholder="Ex: Vila Matias, São Vicente"
+                   required aria-describedby="erro-resp-bairro">
+            <p class="erro-campo" id="erro-resp-bairro" role="alert"></p>
+          </div>
+
+          <h3 class="sub-titulo">Sobre a criança</h3>
+
+          <div class="campo">
+            <label for="crianca-nome">Nome completo <span class="obrig" aria-hidden="true">*</span></label>
+            <input type="text" id="crianca-nome" name="crianca-nome" required aria-describedby="erro-crianca-nome">
+            <p class="erro-campo" id="erro-crianca-nome" role="alert"></p>
+          </div>
+
+          <div class="campo-duplo">
+            <div class="campo">
+              <label for="crianca-nascimento">Data de nascimento <span class="obrig" aria-hidden="true">*</span></label>
+              <input type="date" id="crianca-nascimento" name="crianca-nascimento" required
+                     aria-describedby="erro-crianca-nascimento">
+              <p class="erro-campo" id="erro-crianca-nascimento" role="alert"></p>
+            </div>
+            <div class="campo">
+              <label for="crianca-serie">Série ou ano escolar</label>
+              <input type="text" id="crianca-serie" name="crianca-serie" placeholder="Ex: 4º ano">
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="crianca-escola">Escola onde estuda</label>
+            <input type="text" id="crianca-escola" name="crianca-escola">
+            <p class="ajuda">Se não estiver matriculada no momento, deixe em branco e conte no campo abaixo.</p>
+          </div>
+
+          <div class="campo">
+            <label for="motivo">Por que está procurando a ONG? <span class="obrig" aria-hidden="true">*</span></label>
+            <textarea id="motivo" name="motivo" maxlength="800" required aria-describedby="ajuda-motivo erro-motivo"></textarea>
+            <p class="ajuda" id="ajuda-motivo">Conte a situação da família e em quais atividades há interesse. Até 800 caracteres.</p>
+            <p class="erro-campo" id="erro-motivo" role="alert"></p>
+          </div>
+
+          <div class="campo campo-aceite">
+            <label class="aceite" for="declaro">
+              <input type="checkbox" id="declaro" name="declaro" required aria-describedby="erro-declaro">
+              <span>Declaro que sou o responsável legal pela criança e que as informações são verdadeiras.
+                <span class="obrig" aria-hidden="true">*</span></span>
+            </label>
+            <p class="erro-campo" id="erro-declaro" role="alert"></p>
+          </div>
+
+          <div class="campo campo-aceite">
+            <label class="aceite" for="aceite-lgpd">
+              <input type="checkbox" id="aceite-lgpd" name="aceite-lgpd" required aria-describedby="erro-aceite-lgpd">
+              <span>Autorizo a ONG a usar estes dados apenas para analisar o pedido e fazer o atendimento,
+                conforme a <a href="privacidade.html">Política de privacidade</a>.
+                <span class="obrig" aria-hidden="true">*</span></span>
+            </label>
+            <p class="erro-campo" id="erro-aceite-lgpd" role="alert"></p>
+          </div>
+
+          <button class="btn btn-doar btn-block" type="submit">Enviar solicitação</button>
+          <p class="form-status" role="status" aria-live="polite" id="status-solicitacao"></p>
+        </form>
+      </div>
+
+      <aside class="form-aside">
+        <h2>Como funciona</h2>
+        <ol class="passos">
+          <li><span class="passo-num">1</span><div><h4>Você envia o pedido</h4><p>Com os dados do responsável e da criança.</p></div></li>
+          <li><span class="passo-num">2</span><div><h4>A ONG analisa</h4><p>Conforme as vagas disponíveis em cada atividade.</p></div></li>
+          <li><span class="passo-num">3</span><div><h4>A gente liga</h4><p>Pelo telefone informado, com a resposta.</p></div></li>
+          <li><span class="passo-num">4</span><div><h4>Visita à sede</h4><p>Para conhecer o espaço e fazer a matrícula.</p></div></li>
+        </ol>
+
+        <div class="aviso">
+          <h3>Prefere ir pessoalmente?</h3>
+          <p>A sede atende de segunda a sexta, das 9h às 17h, e o pedido pode ser feito no balcão.</p>
+          <p class="link-mais"><a href="contato.html">Ver endereço e mapa</a></p>
+        </div>
+
+        <div class="aviso">
+          <h3>Dados da criança</h3>
+          <p>As informações enviadas aqui ficam em área restrita e não aparecem em nenhuma página pública do site.</p>
+          <p class="link-mais"><a href="privacidade.html">Ler a política de privacidade</a></p>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand brand-footer">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <strong>Frutos do Amanhã</strong>
+      </div>
+      <p class="muted">Educação, Respeito e Disciplina. ONG fundada por Heloisa Morais em 2011.</p>
+    </div>
+    <div>
+      <h2 class="footer-title">Endereço</h2>
+      <p>Rua Geralda Martins de Oliveira, 355<br>Vila Matias · São Vicente – SP<br>CEP 11345-230</p>
+      <p><a href="tel:+551300000000">(13) 0000-0000</a></p>
+    </div>
+    <div>
+      <h2 class="footer-title">Redes sociais</h2>
+      <nav class="social" aria-label="Redes sociais">
+        <a href="https://instagram.com/ongfrutosdoamanha" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>Instagram @ongfrutosdoamanha</a>
+        <a href="https://www.facebook.com/OngFrutosDoAmanha" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>Projetos Sociais Ong Frutos do Amanhã</a>
+        <a href="https://wa.me/5513900000000" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>WhatsApp (13) 90000-0000</a>
+      </nav>
+    </div>
+    <div>
+      <h2 class="footer-title">Navegação</h2>
+      <nav class="footer-nav" aria-label="Menu secundário">
+        <a href="quem-somos.html">Quem somos</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="como-ajudar.html">Como ajudar</a>
+        <a href="noticias.html">Notícias</a>
+        <a href="transparencia.html">Transparência</a>
+        <a href="solicitar-vaga.html">Solicitar vaga</a>
+        <a class="link-amber" href="voluntariado.html">Seja voluntário</a>
+      </nav>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 ONG Frutos do Amanhã · São Vicente e Praia Grande</p>
+    <nav class="footer-legal" aria-label="Documentos legais">
+      <a href="mapa-do-site.html">Mapa do site</a>
+      <a href="privacidade.html">Política de privacidade</a>
+      <a href="termos.html">Termos de uso</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/formularios.js"></script>
+</body>
+</html>

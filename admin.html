@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel — ONG Frutos do Amanhã</title>
+<meta name="description" content="Painel administrativo da ONG Frutos do Amanhã.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="admin">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="admin-topo">
+  <div class="admin-topo-inner">
+    <a class="brand" href="admin.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <strong>Frutos do Amanhã</strong>
+        <small>Painel administrativo</small>
+      </span>
+    </a>
+    <button class="nav-toggle admin-toggle" type="button" aria-expanded="false" aria-controls="admin-menu">Menu</button>
+    <div class="admin-usuario">
+      <span class="admin-nome">Heloisa Morais</span>
+      <a class="admin-sair" href="index.html">Sair</a>
+    </div>
+  </div>
+</header>
+
+<div class="admin-layout">
+
+  <nav class="admin-menu" id="admin-menu" aria-label="Menu do painel">
+    <a class="admin-item" href="admin.html" aria-current="page">Visão geral</a>
+
+    <p class="admin-grupo" id="g-pessoas">Pessoas</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-pessoas">
+      <a class="admin-item" href="admin-doadores.html">Doadores</a>
+      <a class="admin-item" href="admin-voluntarios.html">Voluntários</a>
+      <a class="admin-item" href="admin-solicitacoes.html">Solicitações <span class="badge">3</span></a>
+      <a class="admin-item" href="admin-criancas.html">Crianças</a>
+      <a class="admin-item" href="admin-responsaveis.html">Responsáveis</a>
+    </div>
+
+    <p class="admin-grupo" id="g-financeiro">Financeiro</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-financeiro">
+      <a class="admin-item" href="admin-doacoes.html">Doações</a>
+    </div>
+
+    <p class="admin-grupo" id="g-conteudo">Conteúdo</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-conteudo">
+      <a class="admin-item" href="admin-projetos.html">Projetos</a>
+      <a class="admin-item" href="admin-noticias.html">Notícias</a>
+    </div>
+
+    <p class="admin-grupo" id="g-admin">Administração</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-admin">
+      <a class="admin-item" href="admin-usuarios.html">Administradores</a>
+    </div>
+  </nav>
+
+  <main class="admin-conteudo" id="conteudo">
+
+    <div class="admin-cabecalho">
+      <div>
+        <h1>Visão geral</h1>
+        <p class="admin-lead">Bom dia, Heloisa. Hoje é 13 de outubro de 2026.</p>
+      </div>
+      <a class="btn btn-doar" href="admin-doacoes.html">Ver doações</a>
+    </div>
+
+    <p class="nota-dev">Tela de demonstração: os números abaixo são de exemplo e virão de consultas
+      ao banco quando o back-end estiver conectado.</p>
+
+    <section class="admin-secao admin-secao-primeira">
+      <h2>Precisa de atenção</h2>
+      <div class="cards cards-3">
+        <article class="card card-texto card-pendencia">
+          <p class="pendencia-num">3</p>
+          <h3>Solicitações de vaga</h3>
+          <p>A mais antiga chegou há 15 dias, de Fernanda Oliveira.</p>
+          <p class="link-mais"><a href="admin-solicitacoes.html">Analisar solicitações</a></p>
+        </article>
+        <article class="card card-texto card-pendencia">
+          <p class="pendencia-num">4</p>
+          <h3>Candidaturas de voluntário</h3>
+          <p>Duas são para reforço escolar, a área com mais falta de gente.</p>
+          <p class="link-mais"><a href="admin-voluntarios.html">Analisar candidaturas</a></p>
+        </article>
+        <article class="card card-texto card-pendencia">
+          <p class="pendencia-num">2</p>
+          <h3>Sem autorização de imagem</h3>
+          <p>Crianças ativas cujo responsável ainda não assinou a autorização.</p>
+          <p class="link-mais"><a href="admin-criancas.html">Ver crianças</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="admin-secao">
+      <h2>Outubro até agora</h2>
+      <div class="numeros numeros-conta">
+        <div class="numero"><span class="stat-num">R$ 2.840</span><span class="numero-label">Recebido no mês</span></div>
+        <div class="numero"><span class="stat-num">18</span><span class="numero-label">Doações concluídas</span></div>
+        <div class="numero"><span class="stat-num">R$ 380</span><span class="numero-label">Aguardando pagamento</span></div>
+        <div class="numero"><span class="stat-num">6</span><span class="numero-label">Doações mensais ativas</span></div>
+      </div>
+    </section>
+
+    <section class="admin-secao">
+      <h2>Doações dos últimos seis meses</h2>
+      <div class="grafico">
+        <div class="grafico-barras" aria-hidden="true">
+          <div class="barra" style="--altura:46%"><span class="barra-valor">1.830</span><span class="barra-mes">Mai</span></div>
+          <div class="barra" style="--altura:58%"><span class="barra-valor">2.310</span><span class="barra-mes">Jun</span></div>
+          <div class="barra" style="--altura:52%"><span class="barra-valor">2.070</span><span class="barra-mes">Jul</span></div>
+          <div class="barra" style="--altura:100%"><span class="barra-valor">3.950</span><span class="barra-mes">Ago</span></div>
+          <div class="barra" style="--altura:66%"><span class="barra-valor">2.620</span><span class="barra-mes">Set</span></div>
+          <div class="barra barra-atual" style="--altura:72%"><span class="barra-valor">2.840</span><span class="barra-mes">Out</span></div>
+        </div>
+        <p class="grafico-nota">Agosto foi o mês da Quermesse Beneficente. Outubro ainda está em andamento.</p>
+      </div>
+
+      <div class="tabela-rolagem oculto-visual">
+        <table class="tabela">
+          <caption>Total recebido por mês, em reais.</caption>
+          <thead><tr><th scope="col">Mês</th><th scope="col">Total</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Maio</th><td>R$ 1.830</td></tr>
+            <tr><th scope="row">Junho</th><td>R$ 2.310</td></tr>
+            <tr><th scope="row">Julho</th><td>R$ 2.070</td></tr>
+            <tr><th scope="row">Agosto</th><td>R$ 3.950</td></tr>
+            <tr><th scope="row">Setembro</th><td>R$ 2.620</td></tr>
+            <tr><th scope="row">Outubro</th><td>R$ 2.840</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="admin-secao">
+      <h2>Últimas doações</h2>
+      <div class="tabela-rolagem">
+        <table class="tabela">
+          <caption class="muted">As cinco mais recentes.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Data</th>
+              <th scope="col">Doador</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Origem</th>
+              <th scope="col">Situação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">05/10</th><td>Maria Aparecida Souza</td><td>R$ 30,00</td><td>Plataforma · mensal</td><td><span class="selo selo-ok">Pago</span></td></tr>
+            <tr><th scope="row">03/10</th><td>João Batista Ramos</td><td>R$ 200,00</td><td>PIX · lançado à mão</td><td><span class="selo selo-ok">Pago</span></td></tr>
+            <tr><th scope="row">02/10</th><td>Carla Menezes</td><td>R$ 100,00</td><td>Plataforma · boleto</td><td><span class="selo selo-pendente">Aguardando</span></td></tr>
+            <tr><th scope="row">28/09</th><td>Padaria São Jorge</td><td>R$ 500,00</td><td>PIX · lançado à mão</td><td><span class="selo selo-ok">Pago</span></td></tr>
+            <tr><th scope="row">22/09</th><td>Ana Paula Ferreira</td><td>R$ 75,00</td><td>Plataforma · PIX</td><td><span class="selo selo-ok">Pago</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="link-mais"><a href="admin-doacoes.html">Ver todas as doações</a></p>
+    </section>
+
+    <section class="admin-secao">
+      <h2>Atendimento</h2>
+      <div class="numeros numeros-conta">
+        <div class="numero"><span class="stat-num">300</span><span class="numero-label">Crianças atendidas</span></div>
+        <div class="numero"><span class="stat-num">250</span><span class="numero-label">Famílias</span></div>
+        <div class="numero"><span class="stat-num">19</span><span class="numero-label">Voluntários ativos</span></div>
+        <div class="numero"><span class="stat-num">128</span><span class="numero-label">Contas no site</span></div>
+      </div>
+    </section>
+
+    <section class="admin-secao">
+      <h2>Conteúdo do site</h2>
+      <div class="cards cards-3">
+        <article class="card card-texto">
+          <h3>Última notícia publicada</h3>
+          <p>"1ª Quermesse Beneficente reúne o bairro na sede", de 23 de agosto. Faz 51 dias.</p>
+          <p class="link-mais"><a href="admin-noticias.html">Publicar notícia</a></p>
+        </article>
+        <article class="card card-texto">
+          <h3>Projetos ativos</h3>
+          <p>Feirinha da Criança e Estudando para o Amanhã aparecem no site público.</p>
+          <p class="link-mais"><a href="admin-projetos.html">Editar projetos</a></p>
+        </article>
+        <article class="card card-texto">
+          <h3>Ver o site</h3>
+          <p>Confira como as páginas públicas estão para quem chega de fora.</p>
+          <p class="link-mais"><a href="index.html">Abrir o site</a></p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="admin-rodape">
+  <p>ONG Frutos do Amanhã · Painel administrativo</p>
+  <nav class="footer-legal" aria-label="Links do painel">
+    <a href="index.html">Ver o site público</a>
+    <a href="mapa-do-site.html">Mapa do site</a>
+  </nav>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Criar conta — ONG Frutos do Amanhã</title>
+<meta name="description" content="Crie sua conta no site da ONG Frutos do Amanhã para doar pela plataforma, acompanhar o histórico e se candidatar ao voluntariado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <strong>Frutos do Amanhã</strong>
+        <small>São Vicente · Praia Grande</small>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+    <nav class="nav" id="menu-principal" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="quem-somos.html">Quem somos</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="como-ajudar.html">Como ajudar</a>
+      <a href="noticias.html">Notícias</a>
+      <a href="contato.html">Contato</a>
+      <span class="nav-acoes">
+        <a class="btn btn-entrar" href="login.html">Entrar</a>
+        <a class="btn btn-doar" href="como-ajudar.html">Doar agora</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <section class="page-head">
+    <div class="container">
+      <p class="eyebrow eyebrow-amber">Criar conta</p>
+      <h1>Sua conta para doar e ser voluntário</h1>
+      <p class="hero-lead">Com uma conta, o formulário de doação já vem preenchido, você acompanha o histórico e pode se candidatar ao voluntariado.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col two-col-wide">
+
+      <div class="form-card">
+        <h2>Seus dados</h2>
+        <p class="form-intro">Campos marcados com <span class="obrig" aria-hidden="true">*</span> são obrigatórios.</p>
+
+        <form id="form-cadastro" novalidate>
+
+          <div class="campo">
+            <label for="nome">Nome completo <span class="obrig" aria-hidden="true">*</span></label>
+            <input type="text" id="nome" name="nome" autocomplete="name" required
+                   aria-describedby="erro-nome">
+            <p class="erro-campo" id="erro-nome" role="alert"></p>
+          </div>
+
+          <div class="campo">
+            <label for="email">E-mail <span class="obrig" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required
+                   aria-describedby="ajuda-email erro-email">
+            <p class="ajuda" id="ajuda-email">Usamos para enviar a confirmação e o comprovante das doações.</p>
+            <p class="erro-campo" id="erro-email" role="alert"></p>
+          </div>
+
+          <div class="campo-duplo">
+            <div class="campo">
+              <label for="telefone">Telefone <span class="obrig" aria-hidden="true">*</span></label>
+              <input type="tel" id="telefone" name="telefone" autocomplete="tel" inputmode="numeric"
+                     placeholder="(13) 90000-0000" maxlength="16" required aria-describedby="erro-telefone">
+              <p class="erro-campo" id="erro-telefone" role="alert"></p>
+            </div>
+            <div class="campo">
+              <label for="cpf">CPF <span class="obrig" aria-hidden="true">*</span></label>
+              <input type="text" id="cpf" name="cpf" inputmode="numeric"
+                     placeholder="000.000.000-00" maxlength="14" required aria-describedby="ajuda-cpf erro-cpf">
+              <p class="ajuda" id="ajuda-cpf">Necessário para emitir o recibo da doação.</p>
+              <p class="erro-campo" id="erro-cpf" role="alert"></p>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="senha">Senha <span class="obrig" aria-hidden="true">*</span></label>
+            <div class="campo-senha">
+              <input type="password" id="senha" name="senha" autocomplete="new-password" required
+                     aria-describedby="ajuda-senha erro-senha">
+              <button type="button" class="ver-senha" data-alvo="senha" aria-pressed="false">Mostrar</button>
+            </div>
+            <p class="ajuda" id="ajuda-senha">Pelo menos 8 caracteres.</p>
+            <p class="erro-campo" id="erro-senha" role="alert"></p>
+          </div>
+
+          <div class="campo">
+            <label for="confirmar">Confirmar senha <span class="obrig" aria-hidden="true">*</span></label>
+            <div class="campo-senha">
+              <input type="password" id="confirmar" name="confirmar" autocomplete="new-password" required
+                     aria-describedby="erro-confirmar">
+              <button type="button" class="ver-senha" data-alvo="confirmar" aria-pressed="false">Mostrar</button>
+            </div>
+            <p class="erro-campo" id="erro-confirmar" role="alert"></p>
+          </div>
+
+          <div class="campo campo-aceite">
+            <label class="aceite" for="aceite">
+              <input type="checkbox" id="aceite" name="aceite" required aria-describedby="erro-aceite">
+              <span>Li e aceito a <a href="privacidade.html">Política de privacidade</a> e os
+                <a href="termos.html">Termos de uso</a>. <span class="obrig" aria-hidden="true">*</span></span>
+            </label>
+            <p class="erro-campo" id="erro-aceite" role="alert"></p>
+          </div>
+
+          <button class="btn btn-doar btn-block" type="submit">Criar minha conta</button>
+
+          <p class="form-status" role="status" aria-live="polite" id="status-cadastro"></p>
+          <p class="form-rodape">Já tem conta? <a href="login.html">Entrar</a></p>
+          <p class="nota-dev">Enquanto o back-end não está conectado, veja a tela seguinte do fluxo:
+            <a href="confirmar-email.html">confirmação de e-mail</a>.</p>
+        </form>
+      </div>
+
+      <aside class="form-aside">
+        <h2>Por que criar uma conta</h2>
+        <ul class="legal-lista">
+          <li>O formulário de doação já vem com o seu nome e CPF preenchidos.</li>
+          <li>Você acompanha todas as suas doações e a situação de cada pagamento.</li>
+          <li>Dá para programar uma doação mensal e cancelar quando quiser.</li>
+          <li>A candidatura ao voluntariado fica dentro da sua conta.</li>
+        </ul>
+
+        <div class="aviso">
+          <h3>Doar sem conta</h3>
+          <p>Se preferir, dá para doar direto pela chave PIX, sem cadastro nenhum.</p>
+          <p class="link-mais"><a href="como-ajudar.html#pix">Ver a chave PIX</a></p>
+        </div>
+
+        <div class="aviso">
+          <h3>Seus dados</h3>
+          <p>Usamos as suas informações apenas para o atendimento e a emissão de recibo. Não repassamos a ninguém e você pode pedir a exclusão quando quiser.</p>
+          <p class="link-mais"><a href="privacidade.html">Ler a política de privacidade</a></p>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand brand-footer">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <strong>Frutos do Amanhã</strong>
+      </div>
+      <p class="muted">Educação, Respeito e Disciplina. ONG fundada por Heloisa Morais em 2011.</p>
+    </div>
+    <div>
+      <h2 class="footer-title">Endereço</h2>
+      <p>Rua Geralda Martins de Oliveira, 355<br>Vila Matias · São Vicente – SP<br>CEP 11345-230</p>
+      <p><a href="tel:+551300000000">(13) 0000-0000</a></p>
+    </div>
+    <div>
+      <h2 class="footer-title">Redes sociais</h2>
+      <nav class="social" aria-label="Redes sociais">
+        <a href="https://instagram.com/ongfrutosdoamanha" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>Instagram @ongfrutosdoamanha</a>
+        <a href="https://www.facebook.com/OngFrutosDoAmanha" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>Projetos Sociais Ong Frutos do Amanhã</a>
+        <a href="https://wa.me/5513900000000" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>WhatsApp (13) 90000-0000</a>
+      </nav>
+    </div>
+    <div>
+      <h2 class="footer-title">Navegação</h2>
+      <nav class="footer-nav" aria-label="Menu secundário">
+        <a href="quem-somos.html">Quem somos</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="como-ajudar.html">Como ajudar</a>
+        <a href="noticias.html">Notícias</a>
+        <a href="transparencia.html">Transparência</a>
+        <a href="solicitar-vaga.html">Solicitar vaga</a>
+        <a class="link-amber" href="voluntariado.html">Seja voluntário</a>
+      </nav>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 ONG Frutos do Amanhã · São Vicente e Praia Grande</p>
+    <nav class="footer-legal" aria-label="Documentos legais">
+      <a href="mapa-do-site.html">Mapa do site</a>
+      <a href="privacidade.html">Política de privacidade</a>
+      <a href="termos.html">Termos de uso</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/formularios.js"></script>
+</body>
+</html>

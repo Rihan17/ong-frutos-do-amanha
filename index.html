@@ -6,7 +6,8 @@
 <title>ONG Frutos do Amanhã — Educação, Respeito e Disciplina</title>
 <meta name="description" content="ONG Frutos do Amanhã: desde 2011 em São Vicente e Praia Grande, atendendo 250 famílias e 300 crianças com educação, cultura, esporte e empreendedorismo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="shortcut icon" href="assets/img/logo.jpg" type="image/x-icon">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -16,7 +17,7 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="#topo">
+    <a class="brand" href="index.html">
       <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-text">
         <strong>Frutos do Amanhã</strong>
@@ -25,19 +26,23 @@
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
     <nav class="nav" id="menu-principal" aria-label="Navegação principal">
-      <a href="#missao">Missão</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#ajudar">Como ajudar</a>
-      <a href="#noticias">Notícias</a>
-      <a href="#contato">Contato</a>
-      <a class="btn btn-doar" href="#ajudar">Doar agora</a>
+      <a href="index.html" aria-current="page">Início</a>
+      <a href="quem-somos.html">Quem somos</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="como-ajudar.html">Como ajudar</a>
+      <a href="noticias.html">Notícias</a>
+      <a href="contato.html">Contato</a>
+      <span class="nav-acoes">
+        <a class="btn btn-entrar" href="login.html">Entrar</a>
+        <a class="btn btn-doar" href="como-ajudar.html">Doar agora</a>
+      </span>
     </nav>
   </div>
 </header>
 
 <main id="conteudo">
 
-  <section class="hero" id="topo">
+  <section class="hero">
     <div class="container hero-grid">
       <div>
         <p class="eyebrow eyebrow-amber">Desde 9 de fevereiro de 2011</p>
@@ -45,14 +50,14 @@
         <p class="hero-lead">Somos uma ONG de São Vicente que abre as portas todos os dias para 300 crianças e 250 famílias da baixada santista, com educação, cultura, esporte e empreendedorismo.</p>
         <p class="slogan">Educação, Respeito e Disciplina.</p>
         <div class="btn-row">
-          <a class="btn btn-doar" href="#ajudar">Quero doar</a>
-          <a class="btn btn-ghost" href="#projetos">Ver nossos projetos</a>
+          <a class="btn btn-doar" href="como-ajudar.html">Quero doar</a>
+          <a class="btn btn-ghost" href="projetos.html">Ver nossos projetos</a>
         </div>
       </div>
       <figure class="hero-photo">
         <div class="hero-photo-frame" aria-hidden="true"></div>
         <div class="photo photo-4x3">
-          <img src="assets/img/hero-criancas.jpg" alt="Crianças atendidas pela ONG durante uma atividade na sede em São Vicente">
+          <img src="assets/img/hero-criancas.jpg" alt="Crianças sorrindo durante a aula de informática na sede da ONG">
         </div>
       </figure>
     </div>
@@ -64,33 +69,45 @@
     </div>
   </section>
 
-  <section class="section" id="missao">
+  <section class="faixa-vaga">
+    <div class="container faixa-vaga-inner">
+      <div>
+        <p class="eyebrow faixa-vaga-rotulo">Para as famílias</p>
+        <h2>Precisa de uma vaga para sua criança?</h2>
+        <p class="faixa-vaga-texto">Se você mora em São Vicente ou Praia Grande, pode inscrever seu filho ou sua filha nas atividades da ONG. É gratuito, sem fila de espera e sem burocracia.</p>
+      </div>
+      <a class="btn btn-vaga" href="solicitar-vaga.html">Solicitar vaga</a>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="container two-col">
       <div>
         <h2>Uma casa aberta na Vila Matias há 15 anos</h2>
         <p class="body-text">A Frutos do Amanhã nasceu em 9 de fevereiro de 2011, quando Heloisa Morais decidiu transformar o próprio quintal em espaço de estudo e convivência para as crianças da vizinhança, em São Vicente.</p>
         <p class="body-text">Hoje a ONG atende cerca de 250 famílias e 300 crianças em São Vicente e Praia Grande. O trabalho continua o mesmo: acolher, ensinar e caminhar junto com quem mais precisa — sem burocracia e sem lista de espera.</p>
+        <p class="link-mais"><a href="quem-somos.html">Conheça nossa história</a></p>
       </div>
       <div>
         <p class="eyebrow eyebrow-blue">Nossos quatro pilares</p>
-        <ol class="pillars">
-          <li><span class="pillar-num">01</span><div><h3>Educação</h3><p>Reforço escolar, material didático e acompanhamento das notas ao longo do ano.</p></div></li>
-          <li><span class="pillar-num">02</span><div><h3>Cultura</h3><p>Oficinas de música, dança e artes, além de saídas culturais pela região.</p></div></li>
-          <li><span class="pillar-num">03</span><div><h3>Esporte</h3><p>Turmas de futebol e atividades coletivas que ensinam disciplina e respeito.</p></div></li>
-          <li><span class="pillar-num">04</span><div><h3>Empreendedorismo</h3><p>Cursos e apoio para que as mães e os jovens gerem a própria renda.</p></div></li>
-        </ol>
+        <ul class="pillars">
+          <li><div><h3>Educação</h3><p>Reforço escolar, material didático e acompanhamento das notas ao longo do ano.</p></div></li>
+          <li><div><h3>Cultura</h3><p>Oficinas de música, dança e artes, além de saídas culturais pela região.</p></div></li>
+          <li><div><h3>Esporte</h3><p>Turmas de futebol e atividades coletivas que ensinam disciplina e respeito.</p></div></li>
+          <li><div><h3>Empreendedorismo</h3><p>Cursos e apoio para que as mães e os jovens gerem a própria renda.</p></div></li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section class="section section-tint" id="projetos">
+  <section class="section section-tint">
     <div class="container">
       <h2>Projetos em destaque</h2>
       <p class="section-lead">Duas frentes que acontecem todos os meses e dependem diretamente das doações da comunidade.</p>
       <div class="cards">
         <article class="card">
           <div class="photo photo-3x2">
-            <img src="assets/img/feirinha-da-crianca.jpg" alt="Voluntários organizando alimentos na Feirinha da Criança">
+            <img src="assets/img/feirinha-da-crianca.jpg" alt="Entrega de cesta de alimentos a uma família na sede da ONG" loading="lazy">
           </div>
           <div class="card-body">
             <p class="eyebrow eyebrow-blue">Segurança alimentar · mensal</p>
@@ -100,7 +117,7 @@
         </article>
         <article class="card">
           <div class="photo photo-3x2">
-            <img src="assets/img/estudando-para-o-amanha.jpg" alt="Crianças recebendo mochilas e material escolar da campanha Estudando para o Amanhã">
+            <img src="assets/img/estudando-para-o-amanha.jpg" alt="Dois meninos segurando os kits de material escolar da campanha Estudando para o Amanhã" loading="lazy">
           </div>
           <div class="card-body">
             <p class="eyebrow eyebrow-blue">Campanha de material escolar</p>
@@ -109,20 +126,18 @@
           </div>
         </article>
       </div>
+      <p class="link-mais"><a href="projetos.html">Ver todos os projetos</a></p>
     </div>
   </section>
 
-  <section class="section section-dark" id="ajudar">
+  <section class="section section-dark">
     <div class="container two-col">
       <div>
         <h2>Como ajudar a Frutos do Amanhã</h2>
-        <p class="body-text">Qualquer valor vira alimento, material escolar ou uma oficina a mais na semana. Você também pode doar itens direto no nosso ponto de coleta.</p>
-        <div class="pix">
-          <p class="eyebrow eyebrow-blue">Doação por PIX </p>
-          <p class="pix-key" id="pix-key">Pix da ONG aqui</p>
-          <button class="btn btn-doar btn-block" type="button" id="copiar-pix" data-label="Copiar chave PIX">Copiar chave PIX</button>
-          <p class="pix-note" role="status" aria-live="polite" id="pix-status"></p>
-          <p class="pix-note">Recibo e prestação de contas pelo Instagram <a href="https://instagram.com/ongfrutosdoamanha" target="_blank" rel="noopener">@ongfrutosdoamanha</a>.</p>
+        <p class="body-text">Qualquer valor vira alimento, material escolar ou uma oficina a mais na semana. Você pode doar pelo PIX, doar pela plataforma com a sua conta ou entregar itens no nosso ponto de coleta.</p>
+        <div class="btn-row">
+          <a class="btn btn-doar" href="como-ajudar.html">Quero doar</a>
+          <a class="btn btn-ghost" href="cadastro.html">Criar minha conta</a>
         </div>
       </div>
       <div>
@@ -144,7 +159,7 @@
     </div>
   </section>
 
-  <section class="section" id="noticias">
+  <section class="section">
     <div class="container">
       <h2>Notícias recentes</h2>
       <div class="news">
@@ -161,12 +176,13 @@
           <div><h3>Estudando para o Amanhã abre lista de material</h3><p>Já são 180 kits pedidos pelas famílias para o próximo ano letivo. A lista completa está no perfil do Instagram da ONG.</p></div>
         </article>
       </div>
+      <p class="link-mais"><a href="noticias.html">Ver todas as notícias</a></p>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer" id="contato">
+<footer class="site-footer">
   <div class="container footer-grid">
     <div>
       <div class="brand brand-footer">
@@ -176,30 +192,38 @@
       <p class="muted">Educação, Respeito e Disciplina. ONG fundada por Heloisa Morais em 2011.</p>
     </div>
     <div>
-      <h3>Endereço</h3>
+      <h2 class="footer-title">Endereço</h2>
       <p>Rua Geralda Martins de Oliveira, 355<br>Vila Matias · São Vicente – SP<br>CEP 11345-230</p>
       <p><a href="tel:+551300000000">(13) 0000-0000</a></p>
     </div>
     <div>
-      <h3>Redes sociais</h3>
+      <h2 class="footer-title">Redes sociais</h2>
       <nav class="social" aria-label="Redes sociais">
         <a href="https://instagram.com/ongfrutosdoamanha" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>Instagram @ongfrutosdoamanha</a>
         <a href="https://www.facebook.com/OngFrutosDoAmanha" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>Projetos Sociais Ong Frutos do Amanhã</a>
+        <a href="https://wa.me/5513900000000" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>WhatsApp (13) 90000-0000</a>
       </nav>
     </div>
     <div>
-      <h3>Navegação</h3>
+      <h2 class="footer-title">Navegação</h2>
       <nav class="footer-nav" aria-label="Menu secundário">
-        <a href="#missao">Missão e pilares</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#ajudar">Como ajudar</a>
-        <a href="#noticias">Notícias</a>
-        <a class="link-amber" href="#ajudar">Seja voluntário</a>
+        <a href="quem-somos.html">Quem somos</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="como-ajudar.html">Como ajudar</a>
+        <a href="noticias.html">Notícias</a>
+        <a href="transparencia.html">Transparência</a>
+        <a href="solicitar-vaga.html">Solicitar vaga</a>
+        <a class="link-amber" href="voluntariado.html">Seja voluntário</a>
       </nav>
     </div>
   </div>
   <div class="container footer-bottom">
     <p>© 2026 ONG Frutos do Amanhã · São Vicente e Praia Grande</p>
+    <nav class="footer-legal" aria-label="Documentos legais">
+      <a href="mapa-do-site.html">Mapa do site</a>
+      <a href="privacidade.html">Política de privacidade</a>
+      <a href="termos.html">Termos de uso</a>
+    </nav>
   </div>
 </footer>
 

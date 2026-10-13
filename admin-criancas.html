@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crianças — Painel ONG Frutos do Amanhã</title>
+<meta name="description" content="Painel administrativo da ONG Frutos do Amanhã.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="admin">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="admin-topo">
+  <div class="admin-topo-inner">
+    <a class="brand" href="admin.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <strong>Frutos do Amanhã</strong>
+        <small>Painel administrativo</small>
+      </span>
+    </a>
+    <button class="nav-toggle admin-toggle" type="button" aria-expanded="false" aria-controls="admin-menu">Menu</button>
+    <div class="admin-usuario">
+      <span class="admin-nome">Heloisa Morais</span>
+      <a class="admin-sair" href="index.html">Sair</a>
+    </div>
+  </div>
+</header>
+
+<div class="admin-layout">
+
+  <nav class="admin-menu" id="admin-menu" aria-label="Menu do painel">
+    <a class="admin-item" href="admin.html">Visão geral</a>
+
+    <p class="admin-grupo" id="g-pessoas">Pessoas</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-pessoas">
+      <a class="admin-item" href="admin-doadores.html">Doadores</a>
+      <a class="admin-item" href="admin-voluntarios.html">Voluntários</a>
+      <a class="admin-item" href="admin-solicitacoes.html">Solicitações <span class="badge">3</span></a>
+      <a class="admin-item" href="admin-criancas.html" aria-current="page">Crianças</a>
+      <a class="admin-item" href="admin-responsaveis.html">Responsáveis</a>
+    </div>
+
+    <p class="admin-grupo" id="g-financeiro">Financeiro</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-financeiro">
+      <a class="admin-item" href="admin-doacoes.html">Doações</a>
+    </div>
+
+    <p class="admin-grupo" id="g-conteudo">Conteúdo</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-conteudo">
+      <a class="admin-item" href="admin-projetos.html">Projetos</a>
+      <a class="admin-item" href="admin-noticias.html">Notícias</a>
+    </div>
+
+    <p class="admin-grupo" id="g-admin">Administração</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-admin">
+      <a class="admin-item" href="admin-usuarios.html">Administradores</a>
+    </div>
+  </nav>
+
+  <main class="admin-conteudo" id="conteudo">
+
+    <div class="admin-cabecalho">
+      <div>
+        <h1>Crianças cadastradas</h1>
+        <p class="admin-lead">Quem é atendido pela ONG. A maioria entra pela aprovação de uma solicitação de vaga.</p>
+      </div>
+      <button class="btn btn-doar" type="button" id="abrir-crianca" aria-expanded="false" aria-controls="form-crianca">
+        Cadastrar criança
+      </button>
+    </div>
+
+    <p class="nota-dev">Tela de demonstração: os cadastros abaixo são de exemplo e virão do banco
+      quando o back-end estiver conectado.</p>
+
+    <div class="aviso aviso-restrito">
+      <h3>Dados protegidos</h3>
+      <p>Esta tela contém dados pessoais de crianças e adolescentes. Nada daqui aparece no site público, e o acesso é restrito à equipe autorizada.</p>
+    </div>
+
+    <section class="form-card bloco-conta" id="form-crianca" hidden>
+      <h2>Cadastrar criança</h2>
+      <p class="form-intro">Use quando a família procurar a sede direto. Pedidos feitos pelo site entram por
+        <a href="admin-solicitacoes.html">Solicitações</a>.</p>
+
+      <form id="form-nova-crianca" novalidate>
+
+        <div class="campo">
+          <label for="c-nome">Nome completo <span class="obrig" aria-hidden="true">*</span></label>
+          <input type="text" id="c-nome" name="c-nome" required aria-describedby="erro-c-nome">
+          <p class="erro-campo" id="erro-c-nome" role="alert"></p>
+        </div>
+
+        <div class="campo-duplo">
+          <div class="campo">
+            <label for="c-nascimento">Data de nascimento <span class="obrig" aria-hidden="true">*</span></label>
+            <input type="date" id="c-nascimento" name="c-nascimento" required aria-describedby="erro-c-nascimento">
+            <p class="erro-campo" id="erro-c-nascimento" role="alert"></p>
+          </div>
+          <div class="campo">
+            <label for="c-responsavel">Responsável <span class="obrig" aria-hidden="true">*</span></label>
+            <select id="c-responsavel" name="c-responsavel" required aria-describedby="ajuda-c-resp erro-c-responsavel">
+              <option value="">Selecione</option>
+              <option>Fernanda Oliveira</option>
+              <option>Cláudia Martins</option>
+              <option>Márcia Nunes</option>
+              <option>Ana Paula Ferreira</option>
+            </select>
+            <p class="ajuda" id="ajuda-c-resp">Não encontrou? <a href="admin-responsaveis.html">Cadastre o responsável primeiro</a>.</p>
+            <p class="erro-campo" id="erro-c-responsavel" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="campo-duplo">
+          <div class="campo">
+            <label for="c-escola">Escola</label>
+            <input type="text" id="c-escola" name="c-escola" placeholder="Ex: EMEF Vila Matias">
+          </div>
+          <div class="campo">
+            <label for="c-serie">Série ou ano</label>
+            <input type="text" id="c-serie" name="c-serie" placeholder="Ex: 4º ano">
+          </div>
+        </div>
+
+        <fieldset class="grupo">
+          <legend>Atividades que frequenta</legend>
+          <div class="valores">
+            <label class="chip"><input type="checkbox" name="c-atividade" value="reforco"><span>Reforço escolar</span></label>
+            <label class="chip"><input type="checkbox" name="c-atividade" value="oficinas"><span>Oficinas culturais</span></label>
+            <label class="chip"><input type="checkbox" name="c-atividade" value="esporte"><span>Esporte</span></label>
+            <label class="chip"><input type="checkbox" name="c-atividade" value="feirinha"><span>Feirinha da Criança</span></label>
+          </div>
+        </fieldset>
+
+        <div class="campo campo-aceite">
+          <label class="aceite" for="c-imagem">
+            <input type="checkbox" id="c-imagem" name="c-imagem">
+            <span>O responsável assinou a autorização de uso de imagem.</span>
+          </label>
+          <p class="ajuda">Sem essa autorização, nenhuma foto da criança pode ser publicada no site ou nas redes sociais.</p>
+        </div>
+
+        <div class="campo">
+          <label for="c-obs">Observações (opcional)</label>
+          <textarea id="c-obs" name="c-obs" maxlength="400"
+                    placeholder="Ex: alergia alimentar, horário de saída, acompanhamento especial"></textarea>
+        </div>
+
+        <div class="btn-row btn-row-form">
+          <button class="btn btn-doar" type="submit">Salvar cadastro</button>
+          <button class="btn btn-copa" type="button" id="cancelar-crianca">Cancelar</button>
+        </div>
+        <p class="form-status" role="status" aria-live="polite" id="status-crianca"></p>
+      </form>
+    </section>
+
+    <div class="numeros numeros-conta">
+      <div class="numero"><span class="stat-num">300</span><span class="numero-label">Crianças atendidas</span></div>
+      <div class="numero"><span class="stat-num">186</span><span class="numero-label">No reforço escolar</span></div>
+      <div class="numero"><span class="stat-num">94</span><span class="numero-label">Com autorização de imagem</span></div>
+      <div class="numero"><span class="stat-num">12</span><span class="numero-label">Inativadas</span></div>
+    </div>
+
+    <section class="admin-secao">
+      <h2>Lista</h2>
+
+      <div class="barra-filtros">
+        <div class="filtros" role="group" aria-label="Filtrar lista">
+          <label class="chip"><input type="radio" name="filtro-crianca" value="ativa" checked><span>Ativas</span></label>
+          <label class="chip"><input type="radio" name="filtro-crianca" value="sem-imagem"><span>Sem autorização de imagem</span></label>
+          <label class="chip"><input type="radio" name="filtro-crianca" value="inativa"><span>Inativadas</span></label>
+          <label class="chip"><input type="radio" name="filtro-crianca" value="todas"><span>Todas</span></label>
+        </div>
+        <div class="campo campo-busca">
+          <label for="busca-crianca">Buscar</label>
+          <input type="search" id="busca-crianca" placeholder="Criança ou responsável">
+        </div>
+      </div>
+
+      <div class="tabela-rolagem">
+        <table class="tabela" id="tabela-criancas">
+          <caption class="muted">Crianças em ordem alfabética.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Idade</th>
+              <th scope="col">Responsável</th>
+              <th scope="col">Atividades</th>
+              <th scope="col">Imagem</th>
+              <th scope="col"><span class="oculto-visual">Ações</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-grupo="ativa" data-busca="gabriel nunes marcia nunes"
+                data-nome="Gabriel Nunes" data-nascimento="21/06/2015 (11 anos)"
+                data-responsavel="Márcia Nunes (avó) · (13) 96333-4455"
+                data-escola="EMEF Vila Matias · 6º ano"
+                data-atividades="Reforço escolar, esporte" data-imagem="Autorizada"
+                data-desde="Cadastrado em 12/10/2026" data-obs="Irmão de Rafael Nunes."
+                data-estado="Ativa">
+              <th scope="row">Gabriel Nunes</th>
+              <td>11 anos</td>
+              <td>Márcia Nunes</td>
+              <td>Reforço, esporte</td>
+              <td><span class="selo selo-ok">Sim</span></td>
+              <td><button class="btn-link ver-crianca" type="button">Detalhes</button></td>
+            </tr>
+            <tr data-grupo="ativa" data-busca="isabela ferreira ana paula ferreira"
+                data-nome="Isabela Ferreira" data-nascimento="17/08/2016 (10 anos)"
+                data-responsavel="Ana Paula Ferreira (mãe) · (13) 95444-5566"
+                data-escola="EMEF Vila Matias · 5º ano"
+                data-atividades="Reforço escolar, oficinas culturais" data-imagem="Autorizada"
+                data-desde="Cadastrada em 22/09/2026" data-obs="—"
+                data-estado="Ativa">
+              <th scope="row">Isabela Ferreira</th>
+              <td>10 anos</td>
+              <td>Ana Paula Ferreira</td>
+              <td>Reforço, oficinas</td>
+              <td><span class="selo selo-ok">Sim</span></td>
+              <td><button class="btn-link ver-crianca" type="button">Detalhes</button></td>
+            </tr>
+            <tr data-grupo="ativa sem-imagem" data-busca="rafael nunes marcia nunes"
+                data-nome="Rafael Nunes" data-nascimento="09/02/2018 (8 anos)"
+                data-responsavel="Márcia Nunes (avó) · (13) 96333-4455"
+                data-escola="EMEF Vila Matias · 2º ano"
+                data-atividades="Reforço escolar" data-imagem="Não autorizada"
+                data-desde="Cadastrado em 12/10/2026" data-obs="Irmão de Gabriel Nunes."
+                data-estado="Ativa">
+              <th scope="row">Rafael Nunes</th>
+              <td>8 anos</td>
+              <td>Márcia Nunes</td>
+              <td>Reforço</td>
+              <td><span class="selo selo-pendente">Não</span></td>
+              <td><button class="btn-link ver-crianca" type="button">Detalhes</button></td>
+            </tr>
+            <tr data-grupo="ativa sem-imagem" data-busca="sofia martins claudia martins"
+                data-nome="Sofia Martins" data-nascimento="03/11/2019 (6 anos)"
+                data-responsavel="Cláudia Martins (mãe) · (13) 97222-3344"
+                data-escola="EMEI Jardim Rio Branco · pré-escola"
+                data-atividades="Oficinas culturais, Feirinha da Criança" data-imagem="Não autorizada"
+                data-desde="Cadastrada em 09/10/2026" data-obs="Família recebe cesta mensal."
+                data-estado="Ativa">
+              <th scope="row">Sofia Martins</th>
+              <td>6 anos</td>
+              <td>Cláudia Martins</td>
+              <td>Oficinas, feirinha</td>
+              <td><span class="selo selo-pendente">Não</span></td>
+              <td><button class="btn-link ver-crianca" type="button">Detalhes</button></td>
+            </tr>
+            <tr data-grupo="inativa" data-busca="lucas oliveira santos fernanda oliveira"
+                data-nome="Lucas Oliveira Santos" data-nascimento="12/04/2017 (9 anos)"
+                data-responsavel="Fernanda Oliveira (mãe) · (13) 98111-2233"
+                data-escola="EMEF Vila Margarida · 4º ano"
+                data-atividades="Reforço escolar" data-imagem="Autorizada"
+                data-desde="Cadastrado em 03/03/2026" data-obs="Família mudou de bairro em setembro."
+                data-estado="Inativada">
+              <th scope="row">Lucas Oliveira Santos</th>
+              <td>9 anos</td>
+              <td>Fernanda Oliveira</td>
+              <td>Reforço</td>
+              <td><span class="selo selo-ok">Sim</span></td>
+              <td><button class="btn-link ver-crianca" type="button">Detalhes</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="vazio" id="crianca-vazio" hidden>Nenhuma criança com esses filtros.</p>
+      <p class="muted" id="contagem-criancas">4 crianças</p>
+    </section>
+
+    <section class="form-card bloco-conta painel-detalhe" id="detalhe-crianca" hidden
+             tabindex="-1" aria-labelledby="crianca-titulo">
+      <div class="detalhe-topo">
+        <h2 id="crianca-titulo">Criança</h2>
+        <button class="btn-link" type="button" id="fechar-crianca">Fechar</button>
+      </div>
+
+      <dl class="resumo">
+        <div><dt>Nascimento</dt><dd id="k-nascimento">—</dd></div>
+        <div><dt>Responsável</dt><dd id="k-responsavel">—</dd></div>
+        <div><dt>Escola</dt><dd id="k-escola">—</dd></div>
+        <div><dt>Atividades</dt><dd id="k-atividades">—</dd></div>
+        <div><dt>Uso de imagem</dt><dd id="k-imagem">—</dd></div>
+        <div><dt>Cadastro</dt><dd id="k-desde">—</dd></div>
+        <div><dt>Observações</dt><dd id="k-obs">—</dd></div>
+        <div><dt>Situação</dt><dd id="k-estado">—</dd></div>
+      </dl>
+
+      <div class="btn-row btn-row-form">
+        <button class="btn btn-copa" type="button" id="editar-crianca">Editar cadastro</button>
+        <a class="btn btn-copa" href="admin-responsaveis.html">Ver responsável</a>
+        <button class="btn btn-risco" type="button" id="inativar-crianca">Inativar</button>
+      </div>
+      <p class="form-status" role="status" aria-live="polite" id="status-detalhe-crianca"></p>
+    </section>
+
+  </main>
+</div>
+
+<footer class="admin-rodape">
+  <p>ONG Frutos do Amanhã · Painel administrativo</p>
+  <nav class="footer-legal" aria-label="Links do painel">
+    <a href="index.html">Ver o site público</a>
+    <a href="mapa-do-site.html">Mapa do site</a>
+  </nav>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/formularios.js"></script>
+</body>
+</html>

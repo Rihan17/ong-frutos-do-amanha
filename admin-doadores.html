@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doadores — Painel ONG Frutos do Amanhã</title>
+<meta name="description" content="Painel administrativo da ONG Frutos do Amanhã.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="admin">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="admin-topo">
+  <div class="admin-topo-inner">
+    <a class="brand" href="admin.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <strong>Frutos do Amanhã</strong>
+        <small>Painel administrativo</small>
+      </span>
+    </a>
+    <button class="nav-toggle admin-toggle" type="button" aria-expanded="false" aria-controls="admin-menu">Menu</button>
+    <div class="admin-usuario">
+      <span class="admin-nome">Heloisa Morais</span>
+      <a class="admin-sair" href="index.html">Sair</a>
+    </div>
+  </div>
+</header>
+
+<div class="admin-layout">
+
+  <nav class="admin-menu" id="admin-menu" aria-label="Menu do painel">
+    <a class="admin-item" href="admin.html">Visão geral</a>
+
+    <p class="admin-grupo" id="g-pessoas">Pessoas</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-pessoas">
+      <a class="admin-item" href="admin-doadores.html" aria-current="page">Doadores</a>
+      <a class="admin-item" href="admin-voluntarios.html">Voluntários</a>
+      <a class="admin-item" href="admin-solicitacoes.html">Solicitações <span class="badge">3</span></a>
+      <a class="admin-item" href="admin-criancas.html">Crianças</a>
+      <a class="admin-item" href="admin-responsaveis.html">Responsáveis</a>
+    </div>
+
+    <p class="admin-grupo" id="g-financeiro">Financeiro</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-financeiro">
+      <a class="admin-item" href="admin-doacoes.html">Doações</a>
+    </div>
+
+    <p class="admin-grupo" id="g-conteudo">Conteúdo</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-conteudo">
+      <a class="admin-item" href="admin-projetos.html">Projetos</a>
+      <a class="admin-item" href="admin-noticias.html">Notícias</a>
+    </div>
+
+    <p class="admin-grupo" id="g-admin">Administração</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-admin">
+      <a class="admin-item" href="admin-usuarios.html">Administradores</a>
+    </div>
+  </nav>
+
+  <main class="admin-conteudo" id="conteudo">
+
+    <div class="admin-cabecalho">
+      <div>
+        <h1>Doadores</h1>
+        <p class="admin-lead">Quem tem conta no site. O cadastro é feito pela própria pessoa, não pelo painel.</p>
+      </div>
+      <a class="btn btn-doar" href="admin-doacoes.html">Ver doações</a>
+    </div>
+
+    <p class="nota-dev">Tela de demonstração: os doadores abaixo são de exemplo e virão do banco
+      quando o back-end estiver conectado.</p>
+
+    <div class="numeros numeros-conta">
+      <div class="numero"><span class="stat-num">128</span><span class="numero-label">Contas criadas</span></div>
+      <div class="numero"><span class="stat-num">47</span><span class="numero-label">Já doaram</span></div>
+      <div class="numero"><span class="stat-num">6</span><span class="numero-label">Com doação mensal</span></div>
+      <div class="numero"><span class="stat-num">3</span><span class="numero-label">Contas inativadas</span></div>
+    </div>
+
+    <section class="admin-secao">
+      <h2>Lista de doadores</h2>
+
+      <div class="barra-filtros">
+        <div class="filtros" role="group" aria-label="Filtrar lista">
+          <label class="chip"><input type="radio" name="filtro-doador" value="todos" checked><span>Todos</span></label>
+          <label class="chip"><input type="radio" name="filtro-doador" value="doou"><span>Já doaram</span></label>
+          <label class="chip"><input type="radio" name="filtro-doador" value="mensal"><span>Doação mensal</span></label>
+          <label class="chip"><input type="radio" name="filtro-doador" value="inativo"><span>Inativados</span></label>
+        </div>
+        <div class="campo campo-busca">
+          <label for="busca-doador">Buscar</label>
+          <input type="search" id="busca-doador" placeholder="Nome ou e-mail">
+        </div>
+      </div>
+
+      <div class="tabela-rolagem">
+        <table class="tabela" id="tabela-doadores">
+          <caption class="muted">Doadores em ordem alfabética.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Contato</th>
+              <th scope="col">Doações</th>
+              <th scope="col">Total</th>
+              <th scope="col">Situação</th>
+              <th scope="col"><span class="oculto-visual">Ações</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-grupo="doou mensal" data-busca="maria aparecida souza maria.souza@exemplo.com"
+                data-nome="Maria Aparecida Souza" data-email="maria.souza@exemplo.com"
+                data-telefone="(13) 98888-7777" data-cpf="123.***.***-45"
+                data-desde="14 de março de 2026" data-doacoes="4" data-total="R$ 310,00"
+                data-mensal="Ativa, R$ 30,00 por mês" data-voluntariado="Candidatura em análise"
+                data-situacao="Ativa">
+              <th scope="row">Maria Aparecida Souza</th>
+              <td>maria.souza@exemplo.com</td>
+              <td>4</td>
+              <td>R$ 310,00</td>
+              <td><span class="selo selo-ok">Ativa</span></td>
+              <td><button class="btn-link ver-doador" type="button">Detalhes</button></td>
+            </tr>
+            <tr data-grupo="doou" data-busca="joao batista ramos joao.ramos@exemplo.com"
+                data-nome="João Batista Ramos" data-email="joao.ramos@exemplo.com"
+                data-telefone="(13) 97777-6666" data-cpf="987.***.***-01"
+                data-desde="2 de junho de 2026" data-doacoes="1" data-total="R$ 200,00"
+                data-mensal="Não tem" data-voluntariado="Não se candidatou"
+                data-situacao="Ativa">
+              <th scope="row">João Batista Ramos</th>
+              <td>joao.ramos@exemplo.com</td>
+              <td>1</td>
+              <td>R$ 200,00</td>
+              <td><span class="selo selo-ok">Ativa</span></td>
+              <td><button class="btn-link ver-doador" type="button">Detalhes</button></td>
+            </tr>
+            <tr data-grupo="doou" data-busca="carla menezes carla.menezes@exemplo.com"
+                data-nome="Carla Menezes" data-email="carla.menezes@exemplo.com"
+                data-telefone="(13) 96666-5555" data-cpf="456.***.***-22"
+                data-desde="19 de agosto de 2026" data-doacoes="2" data-total="R$ 100,00"
+                data-mensal="Não tem" data-voluntariado="Aprovada — oficinas culturais"
+                data-situacao="Ativa">
+              <th scope="row">Carla Menezes</th>
+              <td>carla.menezes@exemplo.com</td>
+              <td>2</td>
+              <td>R$ 100,00</td>
+              <td><span class="selo selo-ok">Ativa</span></td>
+              <td><button class="btn-link ver-doador" type="button">Detalhes</button></td>
+            </tr>
+            <tr data-grupo="" data-busca="pedro alves nogueira pedro.alves@exemplo.com"
+                data-nome="Pedro Alves Nogueira" data-email="pedro.alves@exemplo.com"
+                data-telefone="(13) 95555-4444" data-cpf="321.***.***-77"
+                data-desde="30 de setembro de 2026" data-doacoes="0" data-total="R$ 0,00"
+                data-mensal="Não tem" data-voluntariado="Candidatura em análise"
+                data-situacao="Ativa">
+              <th scope="row">Pedro Alves Nogueira</th>
+              <td>pedro.alves@exemplo.com</td>
+              <td>0</td>
+              <td>R$ 0,00</td>
+              <td><span class="selo selo-ok">Ativa</span></td>
+              <td><button class="btn-link ver-doador" type="button">Detalhes</button></td>
+            </tr>
+            <tr data-grupo="inativo" data-busca="roberto lima roberto.lima@exemplo.com"
+                data-nome="Roberto Lima" data-email="roberto.lima@exemplo.com"
+                data-telefone="(13) 94444-3333" data-cpf="654.***.***-88"
+                data-desde="5 de maio de 2026" data-doacoes="0" data-total="R$ 0,00"
+                data-mensal="Não tem" data-voluntariado="Não se candidatou"
+                data-situacao="Inativada">
+              <th scope="row">Roberto Lima</th>
+              <td>roberto.lima@exemplo.com</td>
+              <td>0</td>
+              <td>R$ 0,00</td>
+              <td><span class="selo selo-neutro">Inativada</span></td>
+              <td><button class="btn-link ver-doador" type="button">Detalhes</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="vazio" id="doadores-vazio" hidden>Nenhum doador com esses filtros.</p>
+
+      <div class="acoes-lista">
+        <p class="muted" id="contagem-doadores">5 doadores</p>
+        <button class="btn btn-copa" type="button" id="exportar-doadores">Exportar CSV</button>
+      </div>
+      <p class="form-status" role="status" aria-live="polite" id="status-exportar-doadores"></p>
+    </section>
+
+    <section class="form-card bloco-conta painel-detalhe" id="detalhe-doador" hidden
+             tabindex="-1" aria-labelledby="detalhe-nome">
+      <div class="detalhe-topo">
+        <h2 id="detalhe-nome">Nome do doador</h2>
+        <button class="btn-link" type="button" id="fechar-detalhe">Fechar</button>
+      </div>
+
+      <dl class="resumo">
+        <div><dt>E-mail</dt><dd id="d-email">—</dd></div>
+        <div><dt>Telefone</dt><dd id="d-telefone">—</dd></div>
+        <div><dt>CPF</dt><dd id="d-cpf">—</dd></div>
+        <div><dt>Conta criada em</dt><dd id="d-desde">—</dd></div>
+        <div><dt>Doações concluídas</dt><dd id="d-doacoes">—</dd></div>
+        <div><dt>Total doado</dt><dd id="d-total">—</dd></div>
+        <div><dt>Doação mensal</dt><dd id="d-mensal">—</dd></div>
+        <div><dt>Voluntariado</dt><dd id="d-voluntariado">—</dd></div>
+        <div><dt>Situação da conta</dt><dd id="d-situacao">—</dd></div>
+      </dl>
+
+      <p class="ajuda">O CPF completo só aparece no registro das doações, para emissão de recibo.</p>
+
+      <div class="btn-row btn-row-form">
+        <a class="btn btn-copa" href="admin-doacoes.html">Ver doações desta pessoa</a>
+        <button class="btn btn-risco" type="button" id="inativar-doador">Inativar conta</button>
+      </div>
+      <p class="form-status" role="status" aria-live="polite" id="status-doador"></p>
+    </section>
+
+  </main>
+</div>
+
+<footer class="admin-rodape">
+  <p>ONG Frutos do Amanhã · Painel administrativo</p>
+  <nav class="footer-legal" aria-label="Links do painel">
+    <a href="index.html">Ver o site público</a>
+    <a href="mapa-do-site.html">Mapa do site</a>
+  </nav>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/formularios.js"></script>
+</body>
+</html>

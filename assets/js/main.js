@@ -1,10 +1,10 @@
-/* ONG Frutos do Amanhã — comportamentos da landing page */
+/* ONG Frutos do Amanhã — comportamentos compartilhados entre as páginas */
 (function () {
   "use strict";
 
-  /* Menu mobile ------------------------------------------------------ */
+  /* Menu mobile (site e painel) --------------------------------------- */
   var toggle = document.querySelector(".nav-toggle");
-  var nav = document.getElementById("menu-principal");
+  var nav = document.getElementById("menu-principal") || document.getElementById("admin-menu");
 
   if (toggle && nav) {
     toggle.addEventListener("click", function () {
@@ -17,9 +17,16 @@
         toggle.setAttribute("aria-expanded", "false");
       }
     });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && nav.classList.contains("is-open")) {
+        nav.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.focus();
+      }
+    });
   }
 
-  /* Copiar chave PIX -------------------------------------------------- */
+  /* Copiar chave PIX (página "Como ajudar") --------------------------- */
   var botao = document.getElementById("copiar-pix");
   var chave = document.getElementById("pix-key");
   var status = document.getElementById("pix-status");

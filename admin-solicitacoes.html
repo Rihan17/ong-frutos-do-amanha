@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solicitações — Painel ONG Frutos do Amanhã</title>
+<meta name="description" content="Painel administrativo da ONG Frutos do Amanhã.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="admin">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="admin-topo">
+  <div class="admin-topo-inner">
+    <a class="brand" href="admin.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <strong>Frutos do Amanhã</strong>
+        <small>Painel administrativo</small>
+      </span>
+    </a>
+    <button class="nav-toggle admin-toggle" type="button" aria-expanded="false" aria-controls="admin-menu">Menu</button>
+    <div class="admin-usuario">
+      <span class="admin-nome">Heloisa Morais</span>
+      <a class="admin-sair" href="index.html">Sair</a>
+    </div>
+  </div>
+</header>
+
+<div class="admin-layout">
+
+  <nav class="admin-menu" id="admin-menu" aria-label="Menu do painel">
+    <a class="admin-item" href="admin.html">Visão geral</a>
+
+    <p class="admin-grupo" id="g-pessoas">Pessoas</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-pessoas">
+      <a class="admin-item" href="admin-doadores.html">Doadores</a>
+      <a class="admin-item" href="admin-voluntarios.html">Voluntários</a>
+      <a class="admin-item" href="admin-solicitacoes.html" aria-current="page">Solicitações <span class="badge">3</span></a>
+      <a class="admin-item" href="admin-criancas.html">Crianças</a>
+      <a class="admin-item" href="admin-responsaveis.html">Responsáveis</a>
+    </div>
+
+    <p class="admin-grupo" id="g-financeiro">Financeiro</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-financeiro">
+      <a class="admin-item" href="admin-doacoes.html">Doações</a>
+    </div>
+
+    <p class="admin-grupo" id="g-conteudo">Conteúdo</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-conteudo">
+      <a class="admin-item" href="admin-projetos.html">Projetos</a>
+      <a class="admin-item" href="admin-noticias.html">Notícias</a>
+    </div>
+
+    <p class="admin-grupo" id="g-admin">Administração</p>
+    <div class="admin-lista" role="group" aria-labelledby="g-admin">
+      <a class="admin-item" href="admin-usuarios.html">Administradores</a>
+    </div>
+  </nav>
+
+  <main class="admin-conteudo" id="conteudo">
+
+    <div class="admin-cabecalho">
+      <div>
+        <h1>Solicitações de vaga</h1>
+        <p class="admin-lead">Pedidos das famílias. Ao aprovar, a criança e o responsável entram no cadastro.</p>
+      </div>
+      <a class="btn btn-copa" href="admin-criancas.html">Ver crianças cadastradas</a>
+    </div>
+
+    <p class="nota-dev">Tela de demonstração: as solicitações abaixo são de exemplo e virão do
+      banco quando o back-end estiver conectado.</p>
+
+    <div class="numeros numeros-conta">
+      <div class="numero"><span class="stat-num">3</span><span class="numero-label">Aguardando análise</span></div>
+      <div class="numero"><span class="stat-num">12</span><span class="numero-label">Aprovadas no ano</span></div>
+      <div class="numero"><span class="stat-num">2</span><span class="numero-label">Reprovadas no ano</span></div>
+      <div class="numero"><span class="stat-num">8</span><span class="numero-label">Dias de espera na média</span></div>
+    </div>
+
+    <section class="admin-secao">
+      <h2>Lista de solicitações</h2>
+
+      <div class="barra-filtros">
+        <div class="filtros" role="group" aria-label="Filtrar por situação">
+          <label class="chip"><input type="radio" name="filtro-sol" value="pendente" checked><span>Pendentes</span></label>
+          <label class="chip"><input type="radio" name="filtro-sol" value="aprovada"><span>Aprovadas</span></label>
+          <label class="chip"><input type="radio" name="filtro-sol" value="reprovada"><span>Reprovadas</span></label>
+          <label class="chip"><input type="radio" name="filtro-sol" value="todas"><span>Todas</span></label>
+        </div>
+        <div class="campo campo-busca">
+          <label for="busca-sol">Buscar</label>
+          <input type="search" id="busca-sol" placeholder="Criança ou responsável">
+        </div>
+      </div>
+
+      <div class="tabela-rolagem">
+        <table class="tabela" id="tabela-solicitacoes">
+          <caption class="muted">Solicitações da mais antiga para a mais recente, para que ninguém fique esperando demais.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Recebida em</th>
+              <th scope="col">Criança</th>
+              <th scope="col">Idade</th>
+              <th scope="col">Responsável</th>
+              <th scope="col">Situação</th>
+              <th scope="col"><span class="oculto-visual">Ações</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-situacao="pendente" data-busca="lucas oliveira santos fernanda oliveira"
+                data-crianca="Lucas Oliveira Santos" data-nascimento="12/04/2017 (9 anos)"
+                data-escola="EMEF Vila Margarida · 4º ano"
+                data-responsavel="Fernanda Oliveira (mãe)" data-contato="(13) 98111-2233"
+                data-bairro="Vila Margarida, São Vicente" data-recebida="28/09/2026"
+                data-motivo="Trabalho o dia todo e ele fica sozinho à tarde. Queria que participasse do reforço escolar e do futebol."
+                data-estado="Pendente">
+              <th scope="row">28/09/2026</th>
+              <td>Lucas Oliveira Santos</td>
+              <td>9 anos</td>
+              <td>Fernanda Oliveira</td>
+              <td><span class="selo selo-pendente">Pendente</span></td>
+              <td><button class="btn-link ver-solicitacao" type="button">Analisar</button></td>
+            </tr>
+            <tr data-situacao="pendente" data-busca="sofia martins claudia martins"
+                data-crianca="Sofia Martins" data-nascimento="03/11/2019 (6 anos)"
+                data-escola="EMEI Jardim Rio Branco · pré-escola"
+                data-responsavel="Cláudia Martins (mãe)" data-contato="(13) 97222-3344"
+                data-bairro="Jardim Rio Branco, Praia Grande" data-recebida="02/10/2026"
+                data-motivo="Soube da Feirinha da Criança por uma vizinha. Preciso de ajuda com alimentos e queria inscrever a Sofia nas oficinas."
+                data-estado="Pendente">
+              <th scope="row">02/10/2026</th>
+              <td>Sofia Martins</td>
+              <td>6 anos</td>
+              <td>Cláudia Martins</td>
+              <td><span class="selo selo-pendente">Pendente</span></td>
+              <td><button class="btn-link ver-solicitacao" type="button">Analisar</button></td>
+            </tr>
+            <tr data-situacao="pendente" data-busca="gabriel e rafael nunes marcia nunes"
+                data-crianca="Gabriel Nunes e Rafael Nunes (irmãos)" data-nascimento="21/06/2015 e 09/02/2018"
+                data-escola="EMEF Vila Matias · 6º ano e 2º ano"
+                data-responsavel="Márcia Nunes (avó)" data-contato="(13) 96333-4455"
+                data-bairro="Vila Matias, São Vicente" data-recebida="06/10/2026"
+                data-motivo="Cuido dos dois netos sozinha. Gostaria de vaga no reforço para os dois."
+                data-estado="Pendente">
+              <th scope="row">06/10/2026</th>
+              <td>Gabriel e Rafael Nunes</td>
+              <td>11 e 8 anos</td>
+              <td>Márcia Nunes</td>
+              <td><span class="selo selo-pendente">Pendente</span></td>
+              <td><button class="btn-link ver-solicitacao" type="button">Analisar</button></td>
+            </tr>
+            <tr data-situacao="aprovada" data-busca="isabela ferreira ana paula ferreira"
+                data-crianca="Isabela Ferreira" data-nascimento="17/08/2016 (10 anos)"
+                data-escola="EMEF Vila Matias · 5º ano"
+                data-responsavel="Ana Paula Ferreira (mãe)" data-contato="(13) 95444-5566"
+                data-bairro="Vila Matias, São Vicente" data-recebida="15/09/2026"
+                data-motivo="Interesse nas oficinas de dança e no reforço escolar."
+                data-estado="Aprovada em 22/09/2026 por Heloisa Morais">
+              <th scope="row">15/09/2026</th>
+              <td>Isabela Ferreira</td>
+              <td>10 anos</td>
+              <td>Ana Paula Ferreira</td>
+              <td><span class="selo selo-ok">Aprovada</span></td>
+              <td><button class="btn-link ver-solicitacao" type="button">Ver</button></td>
+            </tr>
+            <tr data-situacao="reprovada" data-busca="miguel costa renata costa"
+                data-crianca="Miguel Costa" data-nascimento="30/01/2008 (18 anos)"
+                data-escola="ETEC · ensino médio"
+                data-responsavel="Renata Costa (mãe)" data-contato="(13) 94555-6677"
+                data-bairro="Centro, Santos" data-recebida="08/09/2026"
+                data-motivo="Procurando atividades no contraturno."
+                data-estado="Reprovada em 12/09/2026 — fora da faixa de idade atendida e de outra cidade">
+              <th scope="row">08/09/2026</th>
+              <td>Miguel Costa</td>
+              <td>18 anos</td>
+              <td>Renata Costa</td>
+              <td><span class="selo selo-falha">Reprovada</span></td>
+              <td><button class="btn-link ver-solicitacao" type="button">Ver</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="vazio" id="sol-vazio" hidden>Nenhuma solicitação com esses filtros.</p>
+      <p class="muted" id="contagem-sol">3 solicitações</p>
+    </section>
+
+    <section class="form-card bloco-conta painel-detalhe" id="detalhe-solicitacao" hidden
+             tabindex="-1" aria-labelledby="sol-titulo">
+      <div class="detalhe-topo">
+        <h2 id="sol-titulo">Solicitação</h2>
+        <button class="btn-link" type="button" id="fechar-sol">Fechar</button>
+      </div>
+
+      <dl class="resumo">
+        <div><dt>Recebida em</dt><dd id="s-recebida">—</dd></div>
+        <div><dt>Criança</dt><dd id="s-crianca">—</dd></div>
+        <div><dt>Nascimento</dt><dd id="s-nascimento">—</dd></div>
+        <div><dt>Escola</dt><dd id="s-escola">—</dd></div>
+        <div><dt>Responsável</dt><dd id="s-responsavel">—</dd></div>
+        <div><dt>Contato</dt><dd id="s-contato">—</dd></div>
+        <div><dt>Bairro</dt><dd id="s-bairro">—</dd></div>
+        <div><dt>Situação</dt><dd id="s-estado">—</dd></div>
+      </dl>
+
+      <h3 class="sub-titulo">Motivo informado</h3>
+      <p class="body-text" id="s-motivo">—</p>
+
+      <div class="campo" id="campo-analise">
+        <label for="observacao">Observação da análise (opcional)</label>
+        <textarea id="observacao" name="observacao" maxlength="400"
+                  placeholder="Ex: vaga no reforço às terças e quintas"></textarea>
+        <p class="ajuda">Fica guardada no sistema junto com a decisão. Na reprovação, ajuda a explicar o motivo.</p>
+      </div>
+
+      <div class="btn-row btn-row-form" id="acoes-analise">
+        <button class="btn btn-doar" type="button" id="aprovar-sol">Aprovar e cadastrar</button>
+        <button class="btn btn-risco" type="button" id="reprovar-sol">Reprovar</button>
+      </div>
+      <p class="form-status" role="status" aria-live="polite" id="status-sol"></p>
+    </section>
+
+  </main>
+</div>
+
+<footer class="admin-rodape">
+  <p>ONG Frutos do Amanhã · Painel administrativo</p>
+  <nav class="footer-legal" aria-label="Links do painel">
+    <a href="index.html">Ver o site público</a>
+    <a href="mapa-do-site.html">Mapa do site</a>
+  </nav>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/formularios.js"></script>
+</body>
+</html>
